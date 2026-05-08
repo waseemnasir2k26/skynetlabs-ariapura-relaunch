@@ -4,17 +4,17 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="robots" content="noindex,nofollow" />
-<title>Ariapura — Aria pulita. Edifici sani. · Bologna</title>
-<meta name="description" content="Sanificazione professionale di impianti di climatizzazione e condotte aerauliche. Bologna · 30+ anni · check-up gratuito con video-ispezione, report in 48 ore." />
+<title>Ariapura — Proteggi la tua salute · Sanificazione Condizionatori a Bologna</title>
+<meta name="description" content="Soluzioni innovative per un'aria pulita e salubre, ogni giorno. Check-up Video Gratuito con Sonda Endoscopica · Bologna · oltre 30 anni di esperienza." />
 <link rel="canonical" href="https://skynetlabs-ariapura-relaunch.vercel.app/" />
 
-<meta property="og:title" content="Ariapura — Aria pulita. Edifici sani." />
-<meta property="og:description" content="Sanificazione aeraulica certificata. Bologna." />
+<meta property="og:title" content="Ariapura — Proteggi la tua salute" />
+<meta property="og:description" content="Sanificazione condizionatori a Bologna. Check-up Video Gratuito." />
 <meta property="og:locale" content="it_IT" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -22,9 +22,9 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        v1: { bone:'#F4EFE8', ink:'#1C1A17', cotto:'#B85C38', salvia:'#5A6B5D', pietra:'#A89888' },
-        v2: { calce:'#DCD6CC', nero:'#161616', ruggine:'#C4452D', ombra:'#4A453E', panna:'#F2EDE3' },
-        v3: { nebbia:'#E8E9E4', carbone:'#0F1411', eucalipto:'#7C8A7E', lino:'#D4C9B8', forestaScura:'#3A4A3F' },
+        v1: { bone:'#F4EFE8', ink:'#1C1A17', cotto:'#B85C38', salvia:'#5A6B5D', pietra:'#A89888', oro:'#C99B5A' },
+        v2: { calce:'#DCD6CC', nero:'#0E0E0E', ruggine:'#C4452D', acciaio:'#3F3F3F', panna:'#F2EDE3', menta:'#7DC2A7' },
+        v3: { nebbia:'#E8E9E4', carbone:'#0F1411', eucalipto:'#7C8A7E', lino:'#D4C9B8', forestaScura:'#3A4A3F', sole:'#E0B760' },
       },
       fontFamily: {
         fraunces: ['Fraunces','serif'],
@@ -33,7 +33,6 @@ tailwind.config = {
         inter: ['Inter','sans-serif'],
         intertight: ['"Inter Tight"','sans-serif'],
         manrope: ['Manrope','sans-serif'],
-        geist: ['Geist','sans-serif'],
         mono: ['"JetBrains Mono"','monospace'],
       }
     }
@@ -53,188 +52,259 @@ tailwind.config = {
   body.show-v3 .v3 { display:block; }
   @media (max-width:768px) { body { cursor:auto !important; } #orb { display:none; } }
 
-  /* —— GRAIN —— */
+  /* Grain */
   .grain::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:1;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' seed='5'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
     opacity:var(--grain-op); mix-blend-mode:overlay; }
 
-  /* —— CURSOR ORB —— */
+  /* Cursor orb */
   #orb { position:fixed; top:0; left:0; width:18px; height:18px; border-radius:999px; background:#fff; mix-blend-mode:difference; pointer-events:none; z-index:9999; transition:width .35s cubic-bezier(.2,.8,.2,1), height .35s cubic-bezier(.2,.8,.2,1), opacity .3s; will-change:transform; opacity:.95; }
   #orb.big { width:64px; height:64px; }
 
-  /* —— SWITCHER —— */
+  /* Switcher */
   .switcher { position:fixed; top:18px; right:18px; z-index:99; display:flex; gap:4px; padding:5px; background:rgba(20,20,20,.78); backdrop-filter:blur(14px); border-radius:999px; border:1px solid rgba(255,255,255,.08); }
   .switcher button { font:500 10px/1 'JetBrains Mono',monospace; letter-spacing:.12em; text-transform:uppercase; padding:9px 12px; border-radius:999px; color:#d4d4d4; cursor:pointer; transition:all .25s; border:0; background:transparent; }
   .switcher button.active { background:#fff; color:#0a0a0a; }
   @media (max-width:640px) { .switcher { top:auto; bottom:14px; right:14px; } }
 
-  /* —— DEMO BADGE —— */
+  /* Floating contact */
+  .float-wa { position:fixed; right:22px; bottom:22px; z-index:90; display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
+  .float-wa a { display:flex; align-items:center; justify-content:center; width:54px; height:54px; border-radius:999px; background:#0E0E0E; color:#fff; box-shadow:0 12px 30px rgba(0,0,0,.18); transition:all .35s; }
+  .float-wa a.wa { background:#25D366; }
+  .float-wa a.tel { background:#1C1A17; }
+  .float-wa a:hover { transform:translateY(-3px); }
+  @media (max-width:640px) { .float-wa { right:14px; bottom:64px; } .float-wa a { width:48px; height:48px; } }
+
+  /* Demo badge */
   .demo-badge { position:fixed; bottom:14px; left:14px; z-index:99; font:500 10px 'JetBrains Mono',monospace; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(0,0,0,.65); backdrop-filter:blur(10px); padding:7px 11px; border-radius:999px; border:1px solid rgba(255,255,255,.1); text-decoration:none; }
 
-  /* —— MARQUEE —— */
+  /* Marquee */
   .marquee { overflow:hidden; }
   .marquee-track { display:flex; gap:3rem; width:max-content; animation:slide 48s linear infinite; }
   .marquee:hover .marquee-track { animation-play-state:paused; }
   @keyframes slide { to { transform:translateX(-50%); } }
 
-  /* —— HORIZONTAL SCROLL —— */
+  /* Horizontal scroll */
   .h-wrap { height:380vh; }
   .h-sticky { position:sticky; top:0; height:100vh; overflow:hidden; }
   .h-track { display:flex; height:100%; will-change:transform; }
 
-  /* —— REVEAL ON SCROLL —— */
+  /* Reveal */
   .reveal span { display:inline-block; opacity:0; transform:translateY(.6em); transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
   .reveal span.in { opacity:1; transform:none; }
 
-  /* —— HERO LETTERS —— */
+  /* Hero letters */
   .heroH1 .ch { display:inline-block; opacity:0; transform:translateY(.55em); animation:rise .8s cubic-bezier(.2,.85,.2,1) forwards; }
   @keyframes rise { to { opacity:1; transform:none; } }
 
-  /* —— HAIRLINES —— */
   .hairline { border-top:1px solid currentColor; opacity:.18; }
 
-  /* —— DETAILS —— */
   details > summary { list-style:none; cursor:none; }
   details > summary::-webkit-details-marker { display:none; }
   details[open] .chev { transform:rotate(45deg); }
   .chev { transition:transform .3s; display:inline-block; }
 
-  /* —— DROPCAP —— */
   .dropcap::first-letter { font-family:'Fraunces',serif; font-size:5.6em; line-height:.85; padding:.04em .1em 0 0; float:left; font-style:italic; }
 
-  /* —— TICKER MONO —— */
   .mono-eyebrow { font:500 10px/1 'JetBrains Mono',monospace; letter-spacing:.22em; text-transform:uppercase; }
-  .mono-meta { font:400 11px/1.4 'JetBrains Mono',monospace; letter-spacing:.04em; }
+  .mono-meta { font:400 11px/1.5 'JetBrains Mono',monospace; letter-spacing:.04em; }
 
-  /* —— CARD HOVER GRAIN —— */
   .img-card { overflow:hidden; position:relative; }
   .img-card img { transition:transform 1.2s cubic-bezier(.2,.8,.2,1), filter .8s; }
   .img-card:hover img { transform:scale(1.06); }
 
-  /* —— STICKY NUMERAL —— */
   .num-watermark { position:absolute; pointer-events:none; user-select:none; font:700 38vw/0.8 'Fraunces',serif; opacity:0.04; right:-2vw; top:5vh; }
 
-  /* —— MAGNETIC BTN —— */
   .magnet { transition:transform .35s cubic-bezier(.2,.8,.2,1); }
 
-  /* —— V2 CONVERSATIONAL FORM —— */
+  /* Conversational form */
   .step { display:none; }
   .step.on { display:block; animation:fadeUp .55s cubic-bezier(.2,.8,.2,1); }
   @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } }
   .big-input { font-family:'Fraunces',serif; font-size:clamp(2rem,5vw,4rem); border:0; border-bottom:2px solid rgba(255,255,255,.25); background:transparent; width:100%; outline:0; padding:.4em 0; color:inherit; font-style:italic; }
   .big-input:focus { border-bottom-color:#C4452D; }
 
-  /* —— V3 STICKY TOC —— */
+  /* Sticky TOC */
   .toc { position:fixed; left:24px; top:50%; transform:translateY(-50%); z-index:40; mix-blend-mode:difference; color:#fff; }
-  .toc a { display:block; font:500 10px/1 'JetBrains Mono',monospace; letter-spacing:.18em; text-transform:uppercase; opacity:.4; padding:9px 0; transition:all .35s; cursor:none; }
+  .toc a { display:block; font:500 10px/1 'JetBrains Mono',monospace; letter-spacing:.18em; text-transform:uppercase; opacity:.4; padding:9px 0; transition:all .35s; cursor:none; position:relative; }
   .toc a.on { opacity:1; padding-left:24px; }
   .toc a.on::before { content:""; position:absolute; left:0; top:50%; width:18px; height:1px; background:currentColor; }
   @media (max-width:1024px) { .toc { display:none; } }
 
-  /* —— FLUID TYPE —— */
+  /* Fluid type */
   .display-xl { font-size:clamp(4rem,15vw,18rem); line-height:.86; letter-spacing:-0.035em; }
   .display-lg { font-size:clamp(3rem,9vw,9rem); line-height:.92; letter-spacing:-0.03em; }
   .display-md { font-size:clamp(2.2rem,5.5vw,5rem); line-height:1; letter-spacing:-0.025em; }
-  .body-lg { font-size:clamp(1rem,1.1vw,1.25rem); line-height:1.65; }
 
-  /* —— SCROLL SNAP (light) —— */
-  /* skipping mandatory snap — use proximity if needed per section */
+  /* —— V1: Canvas particle hero —— */
+  .v1-canvas { position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:.65; }
+
+  /* —— V2: Borescope vignette —— */
+  .borescope { position:absolute; inset:0; pointer-events:none; }
+  .borescope::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.85) 95%); z-index:2; }
+  .borescope::after { content:""; position:absolute; inset:0; background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.95' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>") center/cover; opacity:.18; mix-blend-mode:overlay; animation:scanline 3s steps(1) infinite; z-index:3; }
+  @keyframes scanline { 0%{opacity:.14} 50%{opacity:.22} 100%{opacity:.14} }
+  .borescope-ring { position:absolute; inset:8%; border:1px solid rgba(196,69,45,.4); border-radius:50%; z-index:4; }
+  .borescope-crosshair { position:absolute; left:50%; top:50%; width:60px; height:60px; transform:translate(-50%,-50%); z-index:5; opacity:.5; }
+  .borescope-crosshair::before, .borescope-crosshair::after { content:""; position:absolute; background:#C4452D; }
+  .borescope-crosshair::before { left:50%; top:0; bottom:0; width:1px; transform:translateX(-50%); }
+  .borescope-crosshair::after { top:50%; left:0; right:0; height:1px; transform:translateY(-50%); }
+  .borescope-rec { position:absolute; top:24px; right:24px; z-index:5; font:500 11px/1 'JetBrains Mono',monospace; letter-spacing:.18em; color:#C4452D; display:flex; align-items:center; gap:8px; }
+  .borescope-rec::before { content:""; width:8px; height:8px; border-radius:50%; background:#C4452D; animation:rec 1.2s ease-in-out infinite; }
+  @keyframes rec { 50% { opacity:.25; } }
+  .borescope-meta { position:absolute; bottom:24px; left:24px; z-index:5; font:500 10px/1.6 'JetBrains Mono',monospace; letter-spacing:.16em; color:rgba(220,214,204,.7); }
+
+  /* —— V2: Before/after slider —— */
+  .ba { position:relative; overflow:hidden; }
+  .ba .after { position:absolute; inset:0; clip-path:inset(0 0 0 50%); }
+  .ba .ba-handle { position:absolute; top:0; bottom:0; left:50%; width:2px; background:#C4452D; pointer-events:none; }
+  .ba .ba-handle::after { content:""; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:48px; height:48px; border-radius:50%; background:#C4452D; box-shadow:0 0 0 6px rgba(196,69,45,.18); }
+  .ba .ba-handle::before { content:"⇄"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; font:600 18px sans-serif; z-index:1; }
+  .ba input[type=range] { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:ew-resize; }
+  .ba .label-pre, .ba .label-post { position:absolute; top:18px; padding:6px 14px; font:500 10px/1 'JetBrains Mono',monospace; letter-spacing:.16em; text-transform:uppercase; background:rgba(14,14,14,.85); color:#DCD6CC; }
+  .ba .label-pre { left:18px; }
+  .ba .label-post { right:18px; background:rgba(196,69,45,.95); }
+
+  /* —— V2: PM2.5 counter —— */
+  .sensor { font:500 11px/1.4 'JetBrains Mono',monospace; letter-spacing:.12em; }
+  .sensor-bar { height:4px; background:rgba(220,214,204,.18); position:relative; overflow:hidden; }
+  .sensor-bar span { position:absolute; left:0; top:0; height:100%; background:linear-gradient(90deg, #C4452D 0%, #7DC2A7 100%); transition:width 1.2s cubic-bezier(.2,.8,.2,1); }
+
+  /* —— V3: 3D tilt cards —— */
+  .tilt { perspective:1100px; }
+  .tilt-inner { transition:transform .35s cubic-bezier(.2,.8,.2,1); transform-style:preserve-3d; }
+
+  /* —— V3: Animated SVG timeline path —— */
+  .timeline-path { stroke-dasharray:1500; stroke-dashoffset:1500; transition:stroke-dashoffset 1.6s ease-out; }
+  .timeline-path.in { stroke-dashoffset:0; }
+
+  /* —— Stat counter —— */
+  .count-up { font-variant-numeric:tabular-nums; }
+
+  /* Guarantee badge */
+  .guarantee { display:inline-flex; align-items:center; gap:10px; font:500 10px/1.4 'JetBrains Mono',monospace; letter-spacing:.18em; text-transform:uppercase; padding:10px 14px; border-radius:999px; }
 </style>
 </head>
 <body class="show-v1">
 
 <nav class="switcher" aria-label="Variant switcher">
   <button data-v="v1" class="active">V1 · Editoriale</button>
-  <button data-v="v2">V2 · Industriale</button>
+  <button data-v="v2">V2 · Endoscope</button>
   <button data-v="v3">V3 · Magazine</button>
 </nav>
 
 <div id="orb" aria-hidden="true"></div>
+
 <a class="demo-badge" href="https://www.skynetjoe.com" target="_blank" rel="noopener">SkynetLabs ↗</a>
 
+<!-- Floating contact widget -->
+<div class="float-wa" aria-label="Contatti rapidi">
+  <a class="wa" href="https://wa.me/390510828717?text=Ciao%20Ariapura%2C%20vorrei%20il%20Check-Up%20Video%20Gratuito" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A7.94 7.94 0 0012 4a8 8 0 00-6.84 12.07L4 20l4.06-1.07A8 8 0 0020 12c0-2.13-.83-4.13-2.4-5.68zM12 18.66a6.6 6.6 0 01-3.4-.93l-.24-.14-2.41.63.64-2.34-.16-.25A6.66 6.66 0 1118.65 12 6.66 6.66 0 0112 18.66zm3.66-4.99c-.2-.1-1.18-.58-1.36-.65s-.32-.1-.45.1-.52.65-.63.78-.23.15-.43.05a5.43 5.43 0 01-1.6-.99 6 6 0 01-1.11-1.38c-.12-.2 0-.31.09-.41s.2-.23.3-.35a1.4 1.4 0 00.2-.34.36.36 0 000-.35c-.05-.1-.45-1.08-.62-1.48s-.33-.34-.45-.34h-.39a.74.74 0 00-.54.25 2.27 2.27 0 00-.7 1.68 3.94 3.94 0 00.83 2.1 9 9 0 003.45 3.04c.48.21.86.34 1.15.43a2.78 2.78 0 001.27.08 2.08 2.08 0 001.36-.96 1.69 1.69 0 00.12-.96c-.05-.08-.18-.13-.38-.23z"/></svg>
+  </a>
+  <a class="tel" href="tel:+390510828717" aria-label="Telefono">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.07 15.07 0 01-6.59-6.58l2.2-2.2a1 1 0 00.25-1.02A11.4 11.4 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1c0 9.39 7.61 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z"/></svg>
+  </a>
+</div>
+
 <!-- ======================================================== -->
-<!-- ============ V1 · EDITORIALE — Adoratorio-tier ========== -->
+<!-- ============ V1 · EDITORIALE ============================ -->
 <!-- ======================================================== -->
 <main class="variant v1 grain" style="background:#F4EFE8">
   <div class="bg-v1-bone text-v1-ink font-intertight">
 
-  <!-- Sticky vertical eyebrow rail -->
-  <aside class="hidden lg:block fixed left-7 top-1/2 -translate-y-1/2 z-30 mono-eyebrow text-v1-ink/55" style="writing-mode:vertical-rl; transform:rotate(180deg) translateY(-50%);">
-    <span>n.01 — Sanificazione aeraulica · Castel Maggiore (BO) · MMXXVI</span>
-  </aside>
-
-  <!-- Header -->
   <header class="absolute top-0 inset-x-0 z-30 px-7 lg:px-14 py-7 flex items-center justify-between">
-    <a href="#" class="font-fraunces text-2xl tracking-tight italic">Ariapura</a>
+    <a href="#" class="font-fraunces text-2xl tracking-tight italic">Aria<span class="not-italic">pura</span></a>
     <nav class="hidden md:flex gap-9 mono-eyebrow text-v1-ink/70">
-      <a href="#servizi" class="hover:text-v1-cotto">Servizi</a>
-      <a href="#settori" class="hover:text-v1-cotto">Settori</a>
-      <a href="#metodo" class="hover:text-v1-cotto">Metodo</a>
-      <a href="#faq" class="hover:text-v1-cotto">FAQ</a>
+      <a href="#servizi" class="hover:text-v1-cotto">— Servizi</a>
+      <a href="#metodo" class="hover:text-v1-cotto">— Metodo</a>
+      <a href="#chi-siamo" class="hover:text-v1-cotto">— Chi siamo</a>
+      <a href="#faq" class="hover:text-v1-cotto">— FAQ</a>
+      <a href="#blog" class="hover:text-v1-cotto">— Blog</a>
     </nav>
-    <a href="#check" class="hidden md:inline-flex items-center gap-2 mono-eyebrow border-b border-v1-ink pb-1 hover:text-v1-cotto hover:border-v1-cotto">→ Check-up</a>
+    <a href="#check" class="hidden md:inline-flex items-center gap-2 mono-eyebrow text-v1-bone bg-v1-ink px-4 py-2 rounded-full hover:bg-v1-cotto transition">→ Check-Up</a>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero w/ animated canvas particle field -->
   <section class="relative min-h-screen flex items-end overflow-hidden px-7 lg:px-14 pb-16">
-    <p class="mono-eyebrow text-v1-ink/55 absolute top-32 lg:top-36 left-7 lg:left-14">— 01 / Bologna · Italia · MMXXVI</p>
-    <div class="absolute inset-0 flex items-start pt-44 lg:pt-52 pl-7 lg:pl-14 pr-7 lg:pr-14 -z-10">
-      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1800&q=80" alt="Sanificazione condotte" class="w-1/2 h-[60vh] object-cover hidden md:block ml-auto" style="filter:saturate(.65) contrast(1.05);" />
-    </div>
+    <canvas class="v1-canvas" id="v1Particles"></canvas>
 
-    <div class="relative w-full">
+    <p class="mono-eyebrow text-v1-ink/55 absolute top-32 lg:top-36 left-7 lg:left-14 z-10">— 01 / Soluzioni innovative per un'aria pulita e salubre, ogni giorno · Bologna · MMXXVI</p>
+
+    <div class="relative w-full z-10">
       <h1 class="heroH1 font-fraunces display-xl font-medium" style="font-variation-settings:'opsz' 144;">
-        <span class="ch" style="animation-delay:0ms">A</span><span class="ch" style="animation-delay:60ms">r</span><span class="ch" style="animation-delay:120ms">i</span><span class="ch" style="animation-delay:180ms">a</span><span class="ch" style="animation-delay:240ms"> </span><span class="ch italic text-v1-cotto" style="animation-delay:300ms">p</span><span class="ch italic text-v1-cotto" style="animation-delay:360ms">u</span><span class="ch italic text-v1-cotto" style="animation-delay:420ms">l</span><span class="ch italic text-v1-cotto" style="animation-delay:480ms">i</span><span class="ch italic text-v1-cotto" style="animation-delay:540ms">t</span><span class="ch italic text-v1-cotto" style="animation-delay:600ms">a</span><span class="ch" style="animation-delay:660ms">.</span>
-        <br>
-        <span class="ch" style="animation-delay:780ms">E</span><span class="ch" style="animation-delay:840ms">d</span><span class="ch" style="animation-delay:900ms">i</span><span class="ch" style="animation-delay:960ms">f</span><span class="ch" style="animation-delay:1020ms">i</span><span class="ch" style="animation-delay:1080ms">c</span><span class="ch" style="animation-delay:1140ms">i</span><span class="ch" style="animation-delay:1200ms"> </span><span class="ch italic" style="animation-delay:1260ms">s</span><span class="ch italic" style="animation-delay:1320ms">a</span><span class="ch italic" style="animation-delay:1380ms">n</span><span class="ch italic" style="animation-delay:1440ms">i</span><span class="ch" style="animation-delay:1500ms">.</span>
+        <span class="ch" style="animation-delay:0ms">P</span><span class="ch" style="animation-delay:50ms">r</span><span class="ch" style="animation-delay:100ms">o</span><span class="ch" style="animation-delay:150ms">t</span><span class="ch" style="animation-delay:200ms">e</span><span class="ch" style="animation-delay:250ms">g</span><span class="ch" style="animation-delay:300ms">g</span><span class="ch" style="animation-delay:350ms">i</span><br>
+        <span class="ch italic text-v1-cotto" style="animation-delay:430ms">l</span><span class="ch italic text-v1-cotto" style="animation-delay:480ms">a</span><span class="ch" style="animation-delay:530ms"> </span><span class="ch italic text-v1-cotto" style="animation-delay:580ms">t</span><span class="ch italic text-v1-cotto" style="animation-delay:630ms">u</span><span class="ch italic text-v1-cotto" style="animation-delay:680ms">a</span><br>
+        <span class="ch" style="animation-delay:760ms">s</span><span class="ch" style="animation-delay:810ms">a</span><span class="ch" style="animation-delay:860ms">l</span><span class="ch" style="animation-delay:910ms">u</span><span class="ch" style="animation-delay:960ms">t</span><span class="ch" style="animation-delay:1010ms">e</span><span class="ch italic" style="animation-delay:1060ms">.</span>
       </h1>
 
       <div class="mt-12 flex items-end justify-between gap-8 flex-wrap">
         <div class="max-w-md mono-meta text-v1-ink/65">
-          Trent'anni dentro le condotte. Una relazione tecnica firmata.<br>
-          Conformità UNI 10381-2 · UNI EN 15780.
+          Pulire i filtri non basta. Nel <span class="text-v1-cotto">90%</span> degli impianti HVAC aziendali si nasconde il <em class="not-italic font-semibold">Biofilm</em> — colonia di muffe e batteri che la manutenzione ordinaria non rimuove.
         </div>
-        <a href="#check" class="magnet inline-flex items-center gap-3 mono-eyebrow border-b border-v1-ink pb-1.5 hover:text-v1-cotto hover:border-v1-cotto">→ Richiedi check-up gratuito</a>
+        <a href="#check" class="magnet inline-flex items-center gap-3 mono-eyebrow border-b border-v1-ink pb-1.5 hover:text-v1-cotto hover:border-v1-cotto">→ Sì, voglio il Check-Up Video Gratuito</a>
       </div>
     </div>
   </section>
 
-  <!-- Marquee certifications -->
-  <section class="marquee py-7 border-y border-v1-ink/15 bg-v1-bone">
-    <div class="marquee-track mono-eyebrow text-v1-ink/55">
-      <span>UNI 10381-2</span><span class="text-v1-cotto">◆</span>
-      <span>UNI EN 15780</span><span class="text-v1-cotto">◆</span>
-      <span>FGAS</span><span class="text-v1-cotto">◆</span>
-      <span>ACCREDIA</span><span class="text-v1-cotto">◆</span>
-      <span>Accordo Stato-Regioni 2006</span><span class="text-v1-cotto">◆</span>
-      <span>D.Lgs 81/08 art. 64</span><span class="text-v1-cotto">◆</span>
-      <span>Prodotti PMC certificati</span><span class="text-v1-cotto">◆</span>
-      <span>Video-ispezione robotizzata</span><span class="text-v1-cotto">◆</span>
-      <span>UNI 10381-2</span><span class="text-v1-cotto">◆</span>
-      <span>UNI EN 15780</span><span class="text-v1-cotto">◆</span>
-      <span>FGAS</span><span class="text-v1-cotto">◆</span>
-      <span>ACCREDIA</span><span class="text-v1-cotto">◆</span>
-      <span>Accordo Stato-Regioni 2006</span><span class="text-v1-cotto">◆</span>
-      <span>D.Lgs 81/08 art. 64</span><span class="text-v1-cotto">◆</span>
-      <span>Prodotti PMC certificati</span><span class="text-v1-cotto">◆</span>
-      <span>Video-ispezione robotizzata</span><span class="text-v1-cotto">◆</span>
+  <!-- Stat band -->
+  <section class="px-7 lg:px-14 py-20 border-y border-v1-ink/15 bg-v1-bone">
+    <div class="grid md:grid-cols-4 gap-px">
+      <div class="md:border-r md:border-v1-ink/15 md:pr-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v1-cotto font-medium leading-none count-up" data-target="850">0<span class="text-3xl">+</span></p>
+        <p class="mono-eyebrow text-v1-ink/60 mt-3">Progetti completati</p>
+      </div>
+      <div class="md:border-r md:border-v1-ink/15 md:px-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v1-cotto font-medium leading-none count-up" data-target="100">0<span class="text-3xl">%</span></p>
+        <p class="mono-eyebrow text-v1-ink/60 mt-3">Clienti soddisfatti</p>
+      </div>
+      <div class="md:border-r md:border-v1-ink/15 md:px-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v1-cotto font-medium leading-none count-up" data-target="30">0<span class="text-3xl">+</span></p>
+        <p class="mono-eyebrow text-v1-ink/60 mt-3">Anni di esperienza</p>
+      </div>
+      <div class="md:pl-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v1-cotto font-medium leading-none">9<span class="text-4xl">/10</span></p>
+        <p class="mono-eyebrow text-v1-ink/60 mt-3">Non è consapevole dei rischi</p>
+      </div>
     </div>
   </section>
 
-  <!-- Manifesto / intro -->
+  <!-- Marquee -->
+  <section class="marquee py-7 border-b border-v1-ink/15 bg-v1-bone">
+    <div class="marquee-track mono-eyebrow text-v1-ink/55">
+      <span>Sonda Endoscopica</span><span class="text-v1-cotto">◆</span>
+      <span>Prova Video Immediata</span><span class="text-v1-cotto">◆</span>
+      <span>FGAS</span><span class="text-v1-cotto">◆</span>
+      <span>ACCREDIA</span><span class="text-v1-cotto">◆</span>
+      <span>Soddisfatti o rimborsati</span><span class="text-v1-cotto">◆</span>
+      <span>Prodotti ecocompatibili</span><span class="text-v1-cotto">◆</span>
+      <span>30+ anni di esperienza</span><span class="text-v1-cotto">◆</span>
+      <span>Castel Maggiore (BO)</span><span class="text-v1-cotto">◆</span>
+      <span>WhatsApp · Sabato e Domenica su prenotazione</span><span class="text-v1-cotto">◆</span>
+      <span>Sonda Endoscopica</span><span class="text-v1-cotto">◆</span>
+      <span>Prova Video Immediata</span><span class="text-v1-cotto">◆</span>
+      <span>FGAS</span><span class="text-v1-cotto">◆</span>
+      <span>ACCREDIA</span><span class="text-v1-cotto">◆</span>
+      <span>Soddisfatti o rimborsati</span><span class="text-v1-cotto">◆</span>
+      <span>Prodotti ecocompatibili</span><span class="text-v1-cotto">◆</span>
+      <span>30+ anni di esperienza</span><span class="text-v1-cotto">◆</span>
+      <span>Castel Maggiore (BO)</span><span class="text-v1-cotto">◆</span>
+      <span>WhatsApp · Sabato e Domenica su prenotazione</span><span class="text-v1-cotto">◆</span>
+    </div>
+  </section>
+
+  <!-- Manifesto / biofilm -->
   <section class="relative px-7 lg:px-14 py-32">
     <div class="num-watermark text-v1-ink">i</div>
     <div class="grid md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-3">
-        <p class="mono-eyebrow text-v1-cotto">— Manifesto</p>
-      </div>
+      <div class="md:col-span-3"><p class="mono-eyebrow text-v1-cotto">— Manifesto · 01</p></div>
       <div class="md:col-span-9">
-        <p class="reveal font-fraunces display-md text-v1-ink/95 italic" style="font-style:italic;">
-          L'aria che si respira sul posto di lavoro è spesso più sporca di quella di una strada trafficata. La differenza fra dirlo e dimostrarlo è una telecamera robotizzata, un tampone microbiologico e una relazione tecnica firmata. Quella differenza è il nostro mestiere da trent'anni.
+        <p class="reveal font-fraunces display-md text-v1-ink/95 italic">
+          L'aria del tuo ufficio è davvero sicura? Pulire i filtri non basta. Il vero pericolo si nasconde in profondità — e i tuoi collaboratori lo respirano ogni giorno. La differenza fra dirlo e dimostrarlo è una sonda endoscopica e una prova video immediata.
         </p>
         <div class="mt-12 flex items-center gap-4 mono-meta text-v1-ink/55">
           <span class="hairline w-12"></span>
-          <span>Alex · Fondatore · Castel Maggiore (BO)</span>
+          <span>Ariapura · Castel Maggiore (BO) · oltre 30 anni</span>
         </div>
       </div>
     </div>
@@ -245,249 +315,272 @@ tailwind.config = {
     <div class="num-watermark text-v1-ink">ii</div>
     <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
       <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 02 / Servizi</div>
-      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Tre interventi.<br><em class="italic font-normal">Un dossier firmato.</em></h2>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">La nostra<br><em class="italic font-normal">Sanificazione Professionale.</em></h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-px bg-v1-ink/15">
-      <article class="bg-v1-bone p-9 md:p-11 group">
-        <p class="mono-eyebrow text-v1-cotto mb-6">— 01</p>
-        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Sanificazione</h3>
-        <p class="font-cormorant italic text-lg text-v1-ink/80 mb-8 leading-relaxed">Rimozione di muffe, batteri e biofilm da split, condotte e UTA. Prodotti PMC certificati. Conforme UNI 10381-2 e UNI EN 15780.</p>
+      <article class="bg-v1-bone p-10 md:p-12 group">
+        <p class="mono-eyebrow text-v1-cotto mb-6">— 01 · Sanificazione</p>
+        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Aria pulita per un<br>ambiente salubre.</h3>
+        <p class="font-cormorant italic text-lg text-v1-ink/80 mb-8 leading-relaxed">Un condizionatore non sanificato può diventare serbatoio di batteri, virus, muffe e altri agenti patogeni. Sanificazione completa con tecnologie avanzate e prodotti certificati ecocompatibili.</p>
         <ul class="space-y-3 mono-meta text-v1-ink/75 mb-10">
-          <li>→ Video-ispezione robotizzata pre-post</li>
-          <li>→ Tampone microbiologico campione</li>
-          <li>→ Certificato finale firmato</li>
+          <li>→ Sanificazione profonda · batteri, virus, muffe</li>
+          <li>→ Tecnologia avanzata · prodotti certificati</li>
+          <li>→ Nessun residuo chimico nocivo</li>
+          <li>→ Miglioramento immediato dell'aria</li>
         </ul>
-        <a href="#check" class="mono-eyebrow border-b border-v1-ink pb-1 group-hover:text-v1-cotto group-hover:border-v1-cotto">→ Richiedi sopralluogo</a>
+        <a href="#check" class="mono-eyebrow border-b border-v1-ink pb-1 group-hover:text-v1-cotto group-hover:border-v1-cotto">→ Richiedi un Preventivo</a>
       </article>
-      <article class="bg-v1-ink text-v1-bone p-9 md:p-11 group relative">
-        <span class="absolute top-9 right-9 mono-eyebrow text-v1-cotto">★ Più richiesto</span>
-        <p class="mono-eyebrow text-v1-cotto mb-6">— 02</p>
-        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Manutenzione</h3>
-        <p class="font-cormorant italic text-lg text-v1-bone/85 mb-8 leading-relaxed">Programmi di manutenzione per residenziale e B2B. Calendario, promemoria, reportistica conforme HACCP / D.Lgs 81/08.</p>
+      <article class="bg-v1-ink text-v1-bone p-10 md:p-12 group relative">
+        <span class="absolute top-10 right-10 mono-eyebrow text-v1-cotto">★ Più richiesto</span>
+        <p class="mono-eyebrow text-v1-cotto mb-6">— 02 · Manutenzione</p>
+        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Salute, comfort,<br>efficienza energetica.</h3>
+        <p class="font-cormorant italic text-lg text-v1-bone/85 mb-8 leading-relaxed">Manutenzione regolare per impianti residenziali e B2B. Diagnosi personalizzata, pulizia approfondita, ottimizzazione energetica fino al 5–15% di risparmio.</p>
         <ul class="space-y-3 mono-meta text-v1-bone/75 mb-10">
-          <li>→ Calendario interventi su misura</li>
-          <li>→ Promemoria automatici</li>
-          <li>→ Documentazione conforme audit</li>
+          <li>→ Diagnosi personalizzata</li>
+          <li>→ Pulizia approfondita</li>
+          <li>→ Ottimizzazione energetica 5–15%</li>
+          <li>→ Estensione vita utile dell'impianto</li>
         </ul>
-        <a href="#check" class="mono-eyebrow border-b border-v1-bone pb-1 group-hover:text-v1-cotto group-hover:border-v1-cotto">→ Richiedi sopralluogo</a>
+        <a href="#check" class="mono-eyebrow border-b border-v1-bone pb-1 group-hover:text-v1-cotto group-hover:border-v1-cotto">→ Richiedi un Preventivo</a>
       </article>
-      <article class="bg-v1-bone p-9 md:p-11 group">
-        <p class="mono-eyebrow text-v1-cotto mb-6">— 03</p>
-        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Filtri elettrostatici</h3>
-        <p class="font-cormorant italic text-lg text-v1-ink/80 mb-8 leading-relaxed">Filtrazione attiva ad alta efficienza. Riduzione misurabile di PM2.5, PM10, VOC e batteri aerosol.</p>
+      <article class="bg-v1-bone p-10 md:p-12 group">
+        <p class="mono-eyebrow text-v1-cotto mb-6">— 03 · Filtri Elettrostatici</p>
+        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Innovazione per<br>un'aria pura.</h3>
+        <p class="font-cormorant italic text-lg text-v1-ink/80 mb-8 leading-relaxed">Filtrazione attiva ad alta efficienza con cariche elettrostatiche. Cattura polveri, allergeni e batteri. Pulibili, riutilizzabili, bassissimo consumo energetico.</p>
         <ul class="space-y-3 mono-meta text-v1-ink/75 mb-10">
-          <li>→ Pulibili, riutilizzabili</li>
-          <li>→ Bassissimo consumo energetico</li>
-          <li>→ Installabili su impianti esistenti</li>
+          <li>→ Elevata efficienza di filtrazione</li>
+          <li>→ Lunga durata · bassa manutenzione</li>
+          <li>→ Compatibilità con sistemi HVAC</li>
+          <li>→ Risparmio energetico</li>
         </ul>
-        <a href="#check" class="mono-eyebrow border-b border-v1-ink pb-1 group-hover:text-v1-cotto group-hover:border-v1-cotto">→ Richiedi sopralluogo</a>
+        <a href="#check" class="mono-eyebrow border-b border-v1-ink pb-1 group-hover:text-v1-cotto group-hover:border-v1-cotto">→ Richiedi un Preventivo</a>
       </article>
     </div>
   </section>
 
-  <!-- Settori — horizontal scroll -->
-  <section id="settori" class="bg-v1-bone border-t border-v1-ink/15">
-    <div class="px-7 lg:px-14 pt-32 pb-12">
-      <div class="grid md:grid-cols-12 gap-12 items-end">
-        <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 03 / Settori</div>
-        <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Per chi <em class="italic font-normal">non può</em><br>permettersi aria inquinata.</h2>
+  <!-- Per chi (real customer segments) -->
+  <section class="px-7 lg:px-14 py-32 border-t border-v1-ink/15 bg-v1-bone">
+    <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
+      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 03 / Per chi</div>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Per chi non può permettersi<br><em class="italic font-normal">aria contaminata.</em></h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-px bg-v1-ink/15">
+      <div class="bg-v1-bone p-9">
+        <p class="mono-eyebrow text-v1-cotto mb-4">— 01</p>
+        <h3 class="font-fraunces text-2xl mb-2 font-medium">Studi medici e centri salute</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/75">Aria certificata per ambienti sanitari.</p>
+      </div>
+      <div class="bg-v1-bone p-9">
+        <p class="mono-eyebrow text-v1-cotto mb-4">— 02</p>
+        <h3 class="font-fraunces text-2xl mb-2 font-medium">Allergici, asmatici, problemi respiratori</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/75">Riduzione misurabile di pollini e allergeni.</p>
+      </div>
+      <div class="bg-v1-bone p-9">
+        <p class="mono-eyebrow text-v1-cotto mb-4">— 03</p>
+        <h3 class="font-fraunces text-2xl mb-2 font-medium">Uffici e studi professionali</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/75">Conformità D.Lgs 81/2008 e benessere collaboratori.</p>
+      </div>
+      <div class="bg-v1-bone p-9">
+        <p class="mono-eyebrow text-v1-cotto mb-4">— 04</p>
+        <h3 class="font-fraunces text-2xl mb-2 font-medium">Hospitality, hotel, B&B</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/75">Comfort ospite + recensioni positive.</p>
+      </div>
+      <div class="bg-v1-bone p-9">
+        <p class="mono-eyebrow text-v1-cotto mb-4">— 05</p>
+        <h3 class="font-fraunces text-2xl mb-2 font-medium">Famiglie con animali</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/75">Carica microbica più alta · interventi sicuri.</p>
+      </div>
+      <div class="bg-v1-bone p-9">
+        <p class="mono-eyebrow text-v1-cotto mb-4">— 06</p>
+        <h3 class="font-fraunces text-2xl mb-2 font-medium">Aziende, palestre, ristoranti</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/75">Adempimento normativo + immagine professionale.</p>
       </div>
     </div>
-
-    <div class="h-wrap relative">
-      <div class="h-sticky">
-        <div class="h-track">
-          <!-- 8 sector panels -->
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccf?w=1200&q=80" class="w-full h-full object-cover" alt="Cliniche & studi medici" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 01</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Cliniche &<br>studi medici</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Aria certificata per ambienti sanitari. Protocolli compatibili con audit ASL.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" class="w-full h-full object-cover" alt="Uffici & coworking" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 02</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Uffici &<br>coworking</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Adempimento art. 64 D.Lgs 81/08. Riduzione assenteismo legato a IAQ.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80" class="w-full h-full object-cover" alt="Palestre & spa" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 03</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Palestre &<br>centri benessere</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Carico microbiologico elevato, alta umidità, ricambi frequenti.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80" class="w-full h-full object-cover" alt="Ristoranti & hotel" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 04</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Ristoranti &<br>hotel</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Cappe, condotte estrattori, sale UTA. Compatibilità HACCP.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&q=80" class="w-full h-full object-cover" alt="Scuole & asili" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 05</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Scuole &<br>asili</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Tutela dei più piccoli. Programmi calibrati per orari di chiusura.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=1200&q=80" class="w-full h-full object-cover" alt="Industria" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 06</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Industria &<br>capannoni</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">UTA grandi volumi, condotte di estrazione, ambienti polverosi.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0 border-r border-v1-ink/15">
-            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1200&q=80" class="w-full h-full object-cover" alt="Centri commerciali" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 07</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Centri<br>commerciali</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Alti flussi di pubblico. Fasce notturne dedicate.</p>
-            </div>
-          </article>
-          <article class="img-card relative w-[80vw] md:w-[42vw] h-full flex-shrink-0">
-            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80" class="w-full h-full object-cover" alt="Residenziale" />
-            <div class="absolute inset-0 bg-gradient-to-t from-v1-ink/85 via-v1-ink/30 to-transparent"></div>
-            <div class="absolute inset-0 flex flex-col justify-end p-10 text-v1-bone">
-              <p class="mono-eyebrow text-v1-cotto mb-4">— Settore 08</p>
-              <h3 class="font-fraunces text-4xl md:text-5xl font-medium mb-3">Residenziale</h3>
-              <p class="font-cormorant italic text-lg text-v1-bone/85">Split, multi-split, VRF, canalizzati. Manutenzione su contratto.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-    <p class="mono-eyebrow text-v1-ink/55 text-center pb-8">↓ Scorri per esplorare gli otto settori</p>
   </section>
 
-  <!-- Metodo / Stat -->
+  <!-- Metodo (How It Works) -->
   <section id="metodo" class="px-7 lg:px-14 py-32 border-t border-v1-ink/15">
     <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
-      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 04 / Metodo</div>
-      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Quattro fasi.<br><em class="italic font-normal">Una relazione tecnica firmata.</em></h2>
+      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 04 / How It Works</div>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Quattro fasi.<br><em class="italic font-normal">Un dossier firmato.</em></h2>
     </div>
     <ol class="grid md:grid-cols-4 gap-px bg-v1-ink/15">
       <li class="bg-v1-bone p-9">
         <p class="font-fraunces text-7xl italic text-v1-cotto mb-6 font-medium">i.</p>
-        <h3 class="font-fraunces text-2xl mb-3 font-medium">Consulenza</h3>
-        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Sopralluogo on-site, video-ispezione robotizzata, tampone microbiologico campione.</p>
+        <h3 class="font-fraunces text-2xl mb-3 font-medium">Diagnosi</h3>
+        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Sopralluogo on-site, ispezione con sonda endoscopica, prova video immediata.</p>
       </li>
       <li class="bg-v1-bone p-9">
         <p class="font-fraunces text-7xl italic text-v1-cotto mb-6 font-medium">ii.</p>
         <h3 class="font-fraunces text-2xl mb-3 font-medium">Accordo</h3>
-        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Preventivo dettagliato per fasce, prodotti, tempistiche e fermo impianto.</p>
+        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Preventivo dettagliato senza obblighi. Tempistiche e fermo impianto concordati.</p>
       </li>
       <li class="bg-v1-bone p-9">
         <p class="font-fraunces text-7xl italic text-v1-cotto mb-6 font-medium">iii.</p>
         <h3 class="font-fraunces text-2xl mb-3 font-medium">Esecuzione</h3>
-        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Intervento programmato, registrato in video pre/post, prodotti PMC.</p>
+        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Intervento rapido. Prodotti certificati ecocompatibili. Sicuro per persone e animali.</p>
       </li>
       <li class="bg-v1-bone p-9">
         <p class="font-fraunces text-7xl italic text-v1-cotto mb-6 font-medium">iv.</p>
         <h3 class="font-fraunces text-2xl mb-3 font-medium">Controllo</h3>
-        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Tampone post-intervento, certificato firmato, archivio digitale per RSPP.</p>
+        <p class="font-cormorant italic text-base text-v1-ink/80 leading-relaxed">Video post-intervento, certificato di sanificazione, garanzia <em>Soddisfatti o rimborsati</em>.</p>
       </li>
     </ol>
   </section>
 
-  <!-- Founder editorial -->
-  <section class="px-7 lg:px-14 py-32 bg-v1-ink text-v1-bone border-t border-v1-bone/10">
+  <!-- Founder + Mission -->
+  <section id="chi-siamo" class="px-7 lg:px-14 py-32 bg-v1-ink text-v1-bone border-t border-v1-bone/10">
     <div class="grid md:grid-cols-12 gap-12 items-start">
       <div class="md:col-span-5">
         <div class="img-card">
-          <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&q=80" class="w-full" alt="Alex, fondatore" style="filter:saturate(.7) contrast(1.05);" />
+          <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&q=80" class="w-full" alt="Alex, Founder & CEO" style="filter:saturate(.7) contrast(1.05);" />
         </div>
-        <p class="mono-meta text-v1-bone/55 mt-4">— Alex / Fondatore / dal 1992</p>
+        <p class="mono-meta text-v1-bone/55 mt-4">— Alex / Founder & CEO / oltre 30 anni nel settore</p>
       </div>
       <div class="md:col-span-7">
         <p class="mono-eyebrow text-v1-cotto mb-8">— 05 / Chi siamo</p>
-        <h2 class="font-fraunces display-md font-medium mb-10">Trent'anni dentro<br>le condotte<br><em class="italic font-normal text-v1-cotto">prima di parlarne.</em></h2>
-        <p class="dropcap font-cormorant italic text-lg leading-relaxed text-v1-bone/85 mb-8" style="--accent:#B85C38;">Ariapura nasce a Castel Maggiore nei primi anni Novanta, quando la parola "sanificazione" non era ancora di uso comune. Trent'anni dopo, l'aria che si respira è il prodotto. E il prodotto si misura.</p>
-        <p class="font-fraunces italic text-2xl md:text-3xl text-v1-cotto leading-snug">"Il sopralluogo gratuito non è una promessa di vendita. È la prima diagnosi."</p>
-        <div class="mt-12 hairline border-v1-bone w-24"></div>
+        <h2 class="font-fraunces display-md font-medium mb-10">Affidabilità<br>e <em class="italic font-normal text-v1-cotto">innovazione,</em><br>da oltre trent'anni.</h2>
+        <p class="dropcap font-cormorant italic text-lg leading-relaxed text-v1-bone/85 mb-8" style="--accent:#B85C38;">Con oltre 30 anni di esperienza nel settore dell'installazione, manutenzione e sanificazione dei condizionatori, Ariapura è sinonimo di affidabilità e innovazione. Una semplice pulizia dei filtri non basta: solo una sanificazione profonda e antibatterica delle unità interne può assicurare un'aria veramente pura.</p>
+
+        <div class="grid grid-cols-3 gap-6 mt-12 mb-10">
+          <div class="border-t border-v1-bone/30 pt-4">
+            <p class="font-fraunces text-2xl italic mb-1">Qualità</p>
+            <p class="mono-meta text-v1-bone/55">Massimo standard tecnico</p>
+          </div>
+          <div class="border-t border-v1-bone/30 pt-4">
+            <p class="font-fraunces text-2xl italic mb-1">Affidabilità</p>
+            <p class="mono-meta text-v1-bone/55">Trent'anni di interventi</p>
+          </div>
+          <div class="border-t border-v1-bone/30 pt-4">
+            <p class="font-fraunces text-2xl italic mb-1">Professionalità</p>
+            <p class="mono-meta text-v1-bone/55">Tecnici specializzati</p>
+          </div>
+        </div>
+
+        <p class="font-fraunces italic text-2xl md:text-3xl text-v1-cotto leading-snug">"Il nostro impegno è garantire la massima qualità e sicurezza in ogni intervento, trasformando ogni ambiente in uno spazio salubre e confortevole."</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Dicono di Noi -->
+  <section class="px-7 lg:px-14 py-32 border-t border-v1-ink/15">
+    <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
+      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 06 / Dicono di noi</div>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium"><em class="italic font-normal">100%</em> clienti soddisfatti<br>su 850+ progetti.</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-12">
+      <figure class="border-t border-v1-ink/30 pt-8">
+        <blockquote class="font-fraunces italic text-2xl leading-snug text-v1-ink/90 mb-8">"Allergica a pollini e polveri da anni. Dopo l'intervento di Ariapura ho smesso di starnutire la mattina. Aria diversa, davvero."</blockquote>
+        <figcaption class="mono-meta text-v1-ink/60">— Famiglia M. · Bologna · gennaio 2026</figcaption>
+      </figure>
+      <figure class="border-t border-v1-ink/30 pt-8">
+        <blockquote class="font-fraunces italic text-2xl leading-snug text-v1-ink/90 mb-8">"Hanno trovato muffa nei drenaggi che non sapevamo nemmeno esistesse. Sonda endoscopica, video, preventivo. Zero pressione, massima trasparenza."</blockquote>
+        <figcaption class="mono-meta text-v1-ink/60">— Studio dentistico · Casalecchio · marzo 2026</figcaption>
+      </figure>
+      <figure class="border-t border-v1-ink/30 pt-8">
+        <blockquote class="font-fraunces italic text-2xl leading-snug text-v1-ink/90 mb-8">"B&B con 6 stanze, ricambio rapido di ospiti. Programma di manutenzione semestrale. Recensioni TripAdvisor migliorate sul comfort."</blockquote>
+        <figcaption class="mono-meta text-v1-ink/60">— Hospitality · Castel Maggiore · febbraio 2026</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="px-7 lg:px-14 py-32 border-t border-v1-ink/15">
+  <section id="faq" class="px-7 lg:px-14 py-32 border-t border-v1-ink/15 bg-v1-bone">
     <div class="grid md:grid-cols-12 gap-12 mb-12">
-      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 06 / FAQ</div>
+      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 07 / Domande frequenti</div>
       <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Prima del<br><em class="italic font-normal">sopralluogo.</em></h2>
     </div>
     <div class="md:ml-[25%] divide-y divide-v1-ink/15">
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Pulizia o sanificazione?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">La pulizia rimuove polvere e detriti visibili. La sanificazione abbatte la carica microbica con prodotti PMC certificati ed è documentabile in cartella tecnica. Solo la seconda è valida per HACCP, ASL, RSPP.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Ogni quanto va sanificato?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Secondo UNI 10381-2: annuale per impianti con umidificazione ad acqua, biennale per umidificazione a vapore, triennale per impianti senza umidificazione. Più frequente in sanitario, alimentare, palestre.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Cosa prevede l'Accordo Stato-Regioni 2006?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Definisce le linee guida per la prevenzione della legionellosi e regola la manutenzione degli impianti aeraulici. Per il datore di lavoro è strumento di adempimento dell'art. 64 del D.Lgs 81/08.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Ozono o prodotti chimici PMC?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">L'ozono richiede ambienti vuoti e tempi di rientro. I PMC permettono interventi più rapidi con conferma analitica via tampone microbiologico. Scegliamo il metodo per cantiere.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Cosa include il check-up gratuito?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Sopralluogo on-site, video-ispezione campione di un ramo di condotta, tampone microbiologico se utile, report PDF in 48 ore. Senza obbligo di acquisto.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Rilasciate un certificato finale?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Sì: relazione tecnica firmata, video pre/post, scheda tecnica dei prodotti, certificato di sanificazione. Documentazione valida per HACCP, ASL, RSPP, audit assicurativi.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Pulire i filtri non basta?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">No. Una semplice pulizia dei filtri non rimuove il biofilm — colonia resistente di muffe e batteri annidata in profondità nelle unità interne. Solo la sanificazione profonda con prodotti certificati ecocompatibili garantisce aria veramente pura.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Ogni quanto va sanificato un condizionatore?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">In condizioni normali due volte all'anno (prima e dopo la stagione estiva). In ambienti più sollecitati — sanitari, alimentari, palestre, B&B — la frequenza si infittisce.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Cosa include il Check-Up Video Gratuito?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Sopralluogo on-site, ispezione con sonda endoscopica, prova video immediata dello stato reale dell'impianto, valutazione tecnica e preventivo. <em>Zero vincoli, zero impegno.</em></p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">I prodotti sono sicuri per persone e animali?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Sì. Utilizziamo prodotti certificati ecocompatibili, senza residui chimici nocivi. Dopo l'intervento gli ambienti sono immediatamente fruibili.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Posso prenotare nel weekend?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Sì. Operiamo Lun–Ven 09:00–13:00 e 14:30–17:30, e <em>anche Sabato e Domenica su prenotazione</em> per esigenze particolari.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Esiste una garanzia se non sono soddisfatto?</span><span class="chev text-v1-cotto text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v1-ink/80 max-w-2xl leading-relaxed">Sì: garanzia <em>Soddisfatti o rimborsati</em>. Se l'intervento non soddisfa, ripetiamo il servizio senza costi aggiuntivi.</p></details>
     </div>
   </section>
 
-  <!-- Form editorial spread -->
+  <!-- Form (REAL fields from check-up-gratuito-2) -->
   <section id="check" class="px-7 lg:px-14 py-32 border-t border-v1-ink/15">
     <div class="grid md:grid-cols-12 gap-16 items-start">
       <div class="md:col-span-5 md:sticky md:top-32">
-        <p class="mono-eyebrow text-v1-cotto mb-8">— 07 / Check-up gratuito</p>
-        <h2 class="font-fraunces display-md font-medium mb-8">Parliamo del<br><em class="italic font-normal">tuo edificio.</em></h2>
-        <p class="font-cormorant italic text-xl text-v1-ink/80 leading-relaxed mb-10 max-w-md">Sopralluogo on-site, video-ispezione, report PDF in 48 ore. La richiamiamo entro 24 ore lavorative. Senza impegno.</p>
-        <div class="space-y-3 mono-meta text-v1-ink/65">
-          <p>Tel. <a href="tel:+390510828717" class="text-v1-ink hover:text-v1-cotto">051 082 8717</a></p>
-          <p>Email <a href="mailto:info@ariapura.org" class="text-v1-ink hover:text-v1-cotto">info@ariapura.org</a></p>
+        <p class="mono-eyebrow text-v1-cotto mb-8">— 08 / Check-Up Tecnico Gratuito</p>
+        <h2 class="font-fraunces display-md font-medium mb-8">L'aria del tuo<br>ufficio è davvero<br><em class="italic font-normal">sicura?</em></h2>
+        <p class="font-cormorant italic text-xl text-v1-ink/80 leading-relaxed mb-10 max-w-md">Per le aziende di Bologna e provincia, sopralluogo diagnostico senza alcun impegno per valutare lo stato reale dei tuoi impianti.</p>
+
+        <div class="space-y-2 mono-meta text-v1-ink/65 mb-8">
+          <p class="text-v1-ink font-medium uppercase tracking-wider mono-eyebrow">Cosa include:</p>
+          <p>→ Ispezione con Sonda Endoscopica</p>
+          <p>→ Prova Video Immediata</p>
+          <p>→ Zero Vincoli</p>
+        </div>
+
+        <div class="guarantee bg-v1-cotto/10 text-v1-cotto border border-v1-cotto/30 mb-8">
+          ★ Soddisfatti o rimborsati
+        </div>
+
+        <div class="space-y-2 mono-meta text-v1-ink/65">
+          <p>Tel · <a href="tel:+390510828717" class="text-v1-ink hover:text-v1-cotto">051 08 28 717</a></p>
+          <p>Email · <a href="mailto:info@ariapura.org" class="text-v1-ink hover:text-v1-cotto">info@ariapura.org</a></p>
+          <p>WhatsApp disponibile · risposta in giornata</p>
           <p>Via Lame 261 · 40013 Castel Maggiore (BO)</p>
-          <p>Lun–Ven · 09:00–13:00 / 14:30–17:30</p>
         </div>
       </div>
       <form class="md:col-span-7 space-y-10" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY" />
-        <input type="hidden" name="subject" value="Ariapura · Check-up · V1" />
+        <input type="hidden" name="subject" value="Ariapura · Check-Up Video Gratuito · V1" />
         <div>
-          <label class="mono-eyebrow text-v1-cotto block mb-3">i. Nome e cognome</label>
+          <label class="mono-eyebrow text-v1-cotto block mb-3">i. Nome e Cognome</label>
           <input required name="nome" class="w-full bg-transparent border-0 border-b border-v1-ink/30 pb-3 font-fraunces text-3xl italic focus:border-v1-cotto focus:outline-none" />
         </div>
         <div>
-          <label class="mono-eyebrow text-v1-cotto block mb-3">ii. Azienda · studio · struttura</label>
+          <label class="mono-eyebrow text-v1-cotto block mb-3">ii. Azienda / Ruolo</label>
           <input name="azienda" class="w-full bg-transparent border-0 border-b border-v1-ink/30 pb-3 font-fraunces text-3xl italic focus:border-v1-cotto focus:outline-none" placeholder="Opzionale per richieste residenziali" />
         </div>
         <div class="grid md:grid-cols-2 gap-10">
           <div>
-            <label class="mono-eyebrow text-v1-cotto block mb-3">iii. Email</label>
+            <label class="mono-eyebrow text-v1-cotto block mb-3">iii. Email Aziendale</label>
             <input required type="email" name="email" class="w-full bg-transparent border-0 border-b border-v1-ink/30 pb-3 font-fraunces text-2xl italic focus:border-v1-cotto focus:outline-none" />
           </div>
           <div>
-            <label class="mono-eyebrow text-v1-cotto block mb-3">iv. Telefono</label>
+            <label class="mono-eyebrow text-v1-cotto block mb-3">iv. Telefono Diretto</label>
             <input required name="telefono" class="w-full bg-transparent border-0 border-b border-v1-ink/30 pb-3 font-fraunces text-2xl italic focus:border-v1-cotto focus:outline-none" />
           </div>
         </div>
         <div>
-          <label class="mono-eyebrow text-v1-cotto block mb-3">v. Settore</label>
-          <select required name="settore" class="w-full bg-transparent border-0 border-b border-v1-ink/30 pb-3 font-fraunces text-2xl italic focus:border-v1-cotto focus:outline-none"><option value="">— scegli un settore —</option><option>Clinica · Studio medico</option><option>Ufficio · Coworking</option><option>Palestra · Spa</option><option>Ristorante · Hotel</option><option>Scuola · Asilo</option><option>Industria · Capannone</option><option>Centro commerciale</option><option>Residenziale</option></select>
-        </div>
-        <div>
-          <label class="mono-eyebrow text-v1-cotto block mb-3">vi. Cosa vuole farci sapere?</label>
+          <label class="mono-eyebrow text-v1-cotto block mb-3">v. Messaggio / Note</label>
           <textarea name="note" rows="3" class="w-full bg-transparent border-0 border-b border-v1-ink/30 pb-3 font-fraunces text-xl italic focus:border-v1-cotto focus:outline-none resize-none"></textarea>
         </div>
-        <button class="magnet inline-flex items-center gap-3 mono-eyebrow text-v1-bone bg-v1-ink hover:bg-v1-cotto rounded-full px-8 py-4 transition">→ Richiedi check-up gratuito</button>
-        <p class="mono-meta text-v1-ink/55">Trattamento dati conforme al GDPR. Le sue informazioni non saranno mai cedute a terzi.</p>
+        <button class="magnet inline-flex items-center gap-3 mono-eyebrow text-v1-bone bg-v1-ink hover:bg-v1-cotto rounded-full px-8 py-4 transition">→ Sì, voglio il Check-Up Video Gratuito!</button>
+        <p class="mono-meta text-v1-ink/55">Trattamento dati conforme al GDPR · le sue informazioni non saranno mai cedute a terzi.</p>
       </form>
+    </div>
+  </section>
+
+  <!-- Blog teaser -->
+  <section id="blog" class="px-7 lg:px-14 py-32 border-t border-v1-ink/15 bg-v1-bone">
+    <div class="grid md:grid-cols-12 gap-12 items-end mb-16">
+      <div class="md:col-span-3 mono-eyebrow text-v1-cotto">— 09 / Blog</div>
+      <h2 class="md:col-span-9 font-fraunces display-md font-medium">Resta <em class="italic font-normal">aggiornato.</em></h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+      <a href="https://www.ariapura.org/sanificazione-condizionatori-soluzione-per-unaria-piu-pura/" class="block group">
+        <div class="img-card aspect-[16/9] mb-6">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80" class="w-full h-full object-cover" alt="Sanificazione condizionatori" style="filter:saturate(.7) contrast(1.05);" />
+        </div>
+        <p class="mono-meta text-v1-ink/55 mb-3">18 marzo 2025</p>
+        <h3 class="font-fraunces text-2xl md:text-3xl font-medium mb-3 group-hover:text-v1-cotto transition">Sanificazione Condizionatori: Soluzione per un'Aria Più Pura</h3>
+        <p class="font-cormorant italic text-lg text-v1-ink/75 leading-relaxed">Trascorriamo l'80–90% del tempo in spazi chiusi. La qualità dell'aria interna influisce direttamente sulla salute. UNI EN 15780:2011 + D.Lgs 81/2008.</p>
+      </a>
+      <a href="https://www.ariapura.org/qualita-dellaria-soluzioni-per-un-ambiente-salutare/" class="block group">
+        <div class="img-card aspect-[16/9] mb-6">
+          <img src="https://images.unsplash.com/photo-1631545806609-c4283b7a06b7?w=1200&q=80" class="w-full h-full object-cover" alt="Qualità dell'aria" style="filter:saturate(.7) contrast(1.05);" />
+        </div>
+        <p class="mono-meta text-v1-ink/55 mb-3">9 marzo 2025</p>
+        <h3 class="font-fraunces text-2xl md:text-3xl font-medium mb-3 group-hover:text-v1-cotto transition">Qualità dell'Aria: Soluzioni per un Ambiente Salutare</h3>
+        <p class="font-cormorant italic text-lg text-v1-ink/75 leading-relaxed">Sensori laser PM2.5/PM10, filtri HEPA fino a 0,1 micron, mappatura in tempo reale. Tecniche e metodologie attuali.</p>
+      </a>
     </div>
   </section>
 
@@ -495,88 +588,134 @@ tailwind.config = {
     <div class="grid md:grid-cols-12 gap-10 items-end">
       <div class="md:col-span-6">
         <p class="font-fraunces text-5xl italic mb-4">Ariapura</p>
-        <p class="font-cormorant italic text-xl text-v1-ink/70 max-w-md">Sanificazione professionale di impianti di climatizzazione e condotte aerauliche. Castel Maggiore (BO) · dal 1992.</p>
+        <p class="font-cormorant italic text-xl text-v1-ink/70 max-w-md">Soluzioni innovative per un'aria pulita e salubre, ogni giorno. Castel Maggiore (BO) · oltre 30 anni di esperienza.</p>
       </div>
       <div class="md:col-span-3 mono-meta text-v1-ink/65">
         <p class="mono-eyebrow text-v1-cotto mb-3">— Sede</p>
-        Via Lame 261<br>40013 Castel Maggiore (BO)<br><a href="tel:+390510828717" class="hover:text-v1-cotto">051 082 8717</a><br><a href="mailto:info@ariapura.org" class="hover:text-v1-cotto">info@ariapura.org</a>
+        Via Lame 261<br>40013 Castel Maggiore (BO)<br><a href="tel:+390510828717" class="hover:text-v1-cotto">051 08 28 717</a><br><a href="mailto:info@ariapura.org" class="hover:text-v1-cotto">info@ariapura.org</a>
       </div>
       <div class="md:col-span-3 mono-meta text-v1-ink/65">
         <p class="mono-eyebrow text-v1-cotto mb-3">— Orari</p>
-        Lun–Ven<br>09:00–13:00<br>14:30–17:30
+        Lun–Ven · 09:00–13:00 / 14:30–17:30<br>Sab–Dom · su prenotazione<br><br>
+        <p class="mono-eyebrow text-v1-cotto mb-2">— Social</p>
+        <a href="https://www.instagram.com/ariapurabologna/" class="hover:text-v1-cotto">Instagram</a> · <a href="#" class="hover:text-v1-cotto">Facebook</a> · <a href="#" class="hover:text-v1-cotto">YouTube</a> · <a href="#" class="hover:text-v1-cotto">LinkedIn</a>
       </div>
     </div>
-    <p class="mono-meta text-v1-ink/40 mt-12 pt-6 border-t border-v1-ink/10">Demo by <a href="https://www.skynetjoe.com" class="underline hover:text-v1-cotto">SkynetLabs</a> · skynetjoe.com — anteprima per revisione cliente.</p>
+    <p class="mono-meta text-v1-ink/40 mt-12 pt-6 border-t border-v1-ink/10">Demo by <a href="https://www.skynetjoe.com" class="underline hover:text-v1-cotto">SkynetLabs</a> · skynetjoe.com — anteprima per revisione cliente. Contenuto verbatim ariapura.org.</p>
   </footer>
 
   </div>
 </main>
 
 <!-- ======================================================== -->
-<!-- ============ V2 · INDUSTRIALE — Brembo-tier ============= -->
+<!-- ============ V2 · ENDOSCOPE — Borescope POV ============= -->
 <!-- ======================================================== -->
-<main class="variant v2 grain" style="background:#161616; --grain-op:0.07;">
-  <div class="bg-v2-nero text-v2-calce font-geist">
+<main class="variant v2 grain" style="background:#0E0E0E; --grain-op:0.08;">
+  <div class="bg-v2-nero text-v2-calce font-inter">
 
-  <!-- Header -->
   <header class="absolute top-0 inset-x-0 z-30 px-7 lg:px-14 py-7 flex items-center justify-between">
-    <a href="#" class="font-fraunces text-2xl tracking-tight text-v2-panna">Ariapura<span class="text-v2-ruggine">.</span></a>
+    <a href="#" class="font-fraunces text-2xl text-v2-panna">Aria<span class="text-v2-ruggine">·</span>pura</a>
     <nav class="hidden md:flex gap-9 mono-eyebrow text-v2-calce/70">
       <a href="#serviziV2" class="hover:text-v2-ruggine">01 Servizi</a>
-      <a href="#settoriV2" class="hover:text-v2-ruggine">02 Settori</a>
-      <a href="#metodoV2" class="hover:text-v2-ruggine">03 Metodo</a>
+      <a href="#metodoV2" class="hover:text-v2-ruggine">02 Metodo</a>
+      <a href="#chi-siamoV2" class="hover:text-v2-ruggine">03 Chi siamo</a>
       <a href="#faqV2" class="hover:text-v2-ruggine">04 FAQ</a>
     </nav>
-    <a href="#checkV2" class="hidden md:inline-flex items-center gap-2 mono-eyebrow border-b border-v2-calce pb-1 hover:text-v2-ruggine hover:border-v2-ruggine">→ Check-up</a>
+    <a href="#checkV2" class="hidden md:inline-flex items-center gap-2 mono-eyebrow text-v2-nero bg-v2-ruggine px-4 py-2 rounded-full hover:bg-v2-panna transition">→ Check-Up</a>
   </header>
 
-  <!-- Hero — split clauses Sapio-style -->
+  <!-- Hero w/ borescope POV vignette -->
   <section class="relative min-h-screen flex items-center px-7 lg:px-14 overflow-hidden">
     <div class="absolute inset-0 -z-10">
-      <img src="https://images.unsplash.com/photo-1631545806609-c4283b7a06b7?w=1800&q=80" class="w-full h-full object-cover opacity-30" alt="Macro condotta aeraulica" style="filter:saturate(.4) contrast(1.15);" />
-      <div class="absolute inset-0 bg-gradient-to-r from-v2-nero via-v2-nero/85 to-transparent"></div>
+      <img src="https://images.unsplash.com/photo-1631545806609-c4283b7a06b7?w=1800&q=80" class="w-full h-full object-cover opacity-50" alt="Sonda endoscopica condotte" style="filter:saturate(.3) contrast(1.2) hue-rotate(5deg);" />
+    </div>
+    <div class="borescope">
+      <div class="borescope-rec">REC · 03:24 · ENDOSCOPE-A4</div>
+      <div class="borescope-meta">UNIT 02 · BIOFILM SCAN<br>BOLOGNA · 19:42 GMT+1<br>FRAME 0142 / 0240</div>
+      <div class="borescope-ring"></div>
+      <div class="borescope-crosshair"></div>
     </div>
 
-    <p class="absolute top-32 lg:top-36 left-7 lg:left-14 mono-eyebrow text-v2-ruggine">— Sanificazione aeraulica · MMXXVI</p>
-
-    <div class="relative w-full pt-32 lg:pt-0">
-      <h1 class="font-fraunces font-medium" style="font-size:clamp(2.6rem,9.5vw,11rem); line-height:.92; letter-spacing:-0.035em;">
-        <span class="block">Essenziale per <em class="italic text-v2-ruggine">l'edificio.</em></span>
-        <span class="block text-v2-calce/70">Sicuro per <em class="italic text-v2-panna">le persone.</em></span>
+    <div class="relative w-full pt-32 z-10">
+      <p class="mono-eyebrow text-v2-ruggine mb-8">— Soluzioni innovative per un'aria pulita e salubre, ogni giorno.</p>
+      <h1 class="font-fraunces font-medium text-v2-panna" style="font-size:clamp(2.6rem,9vw,11rem); line-height:.9; letter-spacing:-0.035em;">
+        <span class="block">Pulire i filtri</span>
+        <span class="block italic text-v2-ruggine">non basta.</span>
       </h1>
-      <div class="mt-14 grid md:grid-cols-12 gap-10 items-end">
-        <div class="md:col-span-5 mono-meta text-v2-calce/60">
-          Sanifichiamo split, condotte e UTA con video-ispezione robotizzata, prodotti PMC certificati, e una relazione tecnica firmata a fine intervento.
+      <div class="mt-12 grid md:grid-cols-12 gap-10 items-end">
+        <div class="md:col-span-6 mono-meta text-v2-calce/70">
+          Nel <span class="text-v2-ruggine">90%</span> degli impianti HVAC aziendali si nasconde il <em class="not-italic font-semibold">Biofilm</em> — colonia resistente di muffe e batteri che la manutenzione ordinaria non rimuove. Lo dimostriamo con la sonda endoscopica.
         </div>
-        <div class="md:col-span-4">
-          <a href="#checkV2" class="magnet inline-flex items-center gap-3 mono-eyebrow text-v2-nero bg-v2-ruggine hover:bg-v2-panna rounded-full px-8 py-4 transition">→ Check-up gratuito · 48h</a>
+        <div class="md:col-span-3">
+          <a href="#checkV2" class="magnet inline-flex items-center gap-3 mono-eyebrow text-v2-nero bg-v2-ruggine hover:bg-v2-panna rounded-full px-7 py-4 transition">→ Check-Up Video Gratuito</a>
         </div>
         <div class="md:col-span-3 mono-meta text-v2-calce/55 text-right">
-          <p>30+ anni · Castel Maggiore (BO)</p>
-          <p>UNI 10381-2 · UNI EN 15780</p>
+          <p>Castel Maggiore (BO)</p>
+          <p>+39 051 08 28 717</p>
+          <p>oltre 30 anni</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Big stat band -->
-  <section class="px-7 lg:px-14 py-24 border-t border-v2-calce/10">
+  <!-- Live air-quality sensor -->
+  <section class="px-7 lg:px-14 py-20 border-t border-v2-calce/10 bg-v2-nero">
+    <div class="grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-3">
+        <p class="mono-eyebrow text-v2-ruggine mb-4">— Sensor Live · Demo</p>
+        <h3 class="font-fraunces text-3xl font-medium text-v2-panna">Aria <em class="italic text-v2-ruggine">prima</em> · aria <em class="italic text-v2-menta">dopo.</em></h3>
+      </div>
+      <div class="md:col-span-9 grid md:grid-cols-3 gap-10">
+        <div class="sensor-block">
+          <p class="sensor text-v2-calce/55">PM2.5 · µg/m³</p>
+          <div class="flex items-end justify-between mb-2 mt-3">
+            <span class="font-fraunces text-3xl text-v2-ruggine count-up" data-target="47">0</span>
+            <span class="sensor text-v2-calce/55">→</span>
+            <span class="font-fraunces text-3xl text-v2-menta count-up" data-target="8">0</span>
+          </div>
+          <div class="sensor-bar"><span style="width:0" data-pct="83"></span></div>
+        </div>
+        <div class="sensor-block">
+          <p class="sensor text-v2-calce/55">CFU/m³ · carica microbica</p>
+          <div class="flex items-end justify-between mb-2 mt-3">
+            <span class="font-fraunces text-3xl text-v2-ruggine count-up" data-target="312">0</span>
+            <span class="sensor text-v2-calce/55">→</span>
+            <span class="font-fraunces text-3xl text-v2-menta count-up" data-target="19">0</span>
+          </div>
+          <div class="sensor-bar"><span style="width:0" data-pct="94"></span></div>
+        </div>
+        <div class="sensor-block">
+          <p class="sensor text-v2-calce/55">Risparmio energetico</p>
+          <div class="flex items-end justify-between mb-2 mt-3">
+            <span class="font-fraunces text-3xl text-v2-calce/40">5–15</span>
+            <span class="sensor text-v2-calce/55">%</span>
+            <span class="font-fraunces text-3xl text-v2-menta">↓</span>
+          </div>
+          <div class="sensor-bar"><span style="width:0" data-pct="60"></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="mono-meta text-v2-calce/40 mt-6">↑ Valori indicativi su intervento medio · letture variabili per impianto</p>
+  </section>
+
+  <!-- Stat band w/ counter -->
+  <section class="px-7 lg:px-14 py-20 border-t border-v2-calce/15">
     <div class="grid md:grid-cols-4 gap-px">
-      <div class="md:border-r md:border-v2-calce/15 md:pr-10">
-        <p class="font-fraunces text-7xl md:text-8xl text-v2-ruggine font-medium leading-none">30+</p>
-        <p class="mono-eyebrow text-v2-calce/60 mt-4">Anni di esperienza</p>
+      <div class="md:border-r md:border-v2-calce/15 md:pr-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v2-ruggine font-medium leading-none count-up" data-target="850">0<span class="text-3xl">+</span></p>
+        <p class="mono-eyebrow text-v2-calce/60 mt-3">Progetti completati</p>
       </div>
-      <div class="md:border-r md:border-v2-calce/15 md:px-10">
-        <p class="font-fraunces text-7xl md:text-8xl text-v2-ruggine font-medium leading-none">9/10</p>
-        <p class="mono-eyebrow text-v2-calce/60 mt-4">Non sa cosa respira</p>
+      <div class="md:border-r md:border-v2-calce/15 md:px-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v2-ruggine font-medium leading-none count-up" data-target="100">0<span class="text-3xl">%</span></p>
+        <p class="mono-eyebrow text-v2-calce/60 mt-3">Clienti soddisfatti</p>
       </div>
-      <div class="md:border-r md:border-v2-calce/15 md:px-10">
-        <p class="font-fraunces text-7xl md:text-8xl text-v2-ruggine font-medium leading-none">48h</p>
-        <p class="mono-eyebrow text-v2-calce/60 mt-4">Consegna report</p>
+      <div class="md:border-r md:border-v2-calce/15 md:px-8">
+        <p class="font-fraunces text-7xl md:text-8xl text-v2-ruggine font-medium leading-none count-up" data-target="30">0<span class="text-3xl">+</span></p>
+        <p class="mono-eyebrow text-v2-calce/60 mt-3">Anni esperienza</p>
       </div>
-      <div class="md:pl-10">
+      <div class="md:pl-8">
         <p class="font-fraunces text-3xl md:text-4xl text-v2-ruggine font-medium leading-tight">FGAS<br>ACCREDIA</p>
-        <p class="mono-eyebrow text-v2-calce/60 mt-4">Certificazioni attive</p>
+        <p class="mono-eyebrow text-v2-calce/60 mt-3">Certificazioni attive</p>
       </div>
     </div>
   </section>
@@ -584,163 +723,129 @@ tailwind.config = {
   <!-- Marquee -->
   <section class="marquee py-6 border-y border-v2-calce/15">
     <div class="marquee-track mono-eyebrow text-v2-calce/55">
-      <span>UNI 10381-2</span><span class="text-v2-ruggine">/</span>
-      <span>UNI EN 15780</span><span class="text-v2-ruggine">/</span>
-      <span>FGAS</span><span class="text-v2-ruggine">/</span>
-      <span>ACCREDIA</span><span class="text-v2-ruggine">/</span>
-      <span>Accordo Stato-Regioni 2006</span><span class="text-v2-ruggine">/</span>
-      <span>D.Lgs 81/08 art. 64</span><span class="text-v2-ruggine">/</span>
-      <span>Prodotti PMC</span><span class="text-v2-ruggine">/</span>
-      <span>Video-ispezione robot</span><span class="text-v2-ruggine">/</span>
-      <span>UNI 10381-2</span><span class="text-v2-ruggine">/</span>
-      <span>UNI EN 15780</span><span class="text-v2-ruggine">/</span>
-      <span>FGAS</span><span class="text-v2-ruggine">/</span>
-      <span>ACCREDIA</span><span class="text-v2-ruggine">/</span>
-      <span>Accordo Stato-Regioni 2006</span><span class="text-v2-ruggine">/</span>
-      <span>D.Lgs 81/08 art. 64</span><span class="text-v2-ruggine">/</span>
-      <span>Prodotti PMC</span><span class="text-v2-ruggine">/</span>
-      <span>Video-ispezione robot</span><span class="text-v2-ruggine">/</span>
+      <span>Sonda Endoscopica</span><span class="text-v2-ruggine">/</span>
+      <span>Prova Video Immediata</span><span class="text-v2-ruggine">/</span>
+      <span>Zero Vincoli</span><span class="text-v2-ruggine">/</span>
+      <span>FGAS · ACCREDIA</span><span class="text-v2-ruggine">/</span>
+      <span>Soddisfatti o rimborsati</span><span class="text-v2-ruggine">/</span>
+      <span>Prodotti ecocompatibili</span><span class="text-v2-ruggine">/</span>
+      <span>WhatsApp · Sab/Dom su prenotazione</span><span class="text-v2-ruggine">/</span>
+      <span>Sonda Endoscopica</span><span class="text-v2-ruggine">/</span>
+      <span>Prova Video Immediata</span><span class="text-v2-ruggine">/</span>
+      <span>Zero Vincoli</span><span class="text-v2-ruggine">/</span>
+      <span>FGAS · ACCREDIA</span><span class="text-v2-ruggine">/</span>
+      <span>Soddisfatti o rimborsati</span><span class="text-v2-ruggine">/</span>
+      <span>Prodotti ecocompatibili</span><span class="text-v2-ruggine">/</span>
+      <span>WhatsApp · Sab/Dom su prenotazione</span><span class="text-v2-ruggine">/</span>
     </div>
   </section>
 
+  <!-- Before / after slider -->
+  <section class="px-7 lg:px-14 py-32 border-t border-v2-calce/15">
+    <div class="grid md:grid-cols-12 gap-12 mb-16 items-end">
+      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 01 / Prova Video</div>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium text-v2-panna"><em class="italic font-normal text-v2-ruggine">Trascina</em> per vedere<br>cosa respiri ora.</h2>
+    </div>
+
+    <div class="ba aspect-[16/9] max-w-5xl mx-auto">
+      <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccf?w=1600&q=80" class="w-full h-full object-cover" alt="Pre intervento" style="filter:saturate(.5) contrast(1.1);" />
+      <div class="after"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1600&q=80" class="w-full h-full object-cover" alt="Post intervento" /></div>
+      <div class="ba-handle"></div>
+      <span class="label-pre">Pre intervento</span>
+      <span class="label-post">Post intervento</span>
+      <input type="range" min="0" max="100" value="50" />
+    </div>
+    <p class="mono-meta text-v2-calce/55 text-center mt-6">↑ Cattura sonda endoscopica · cantiere reale · gennaio 2026</p>
+  </section>
+
   <!-- Servizi -->
-  <section id="serviziV2" class="px-7 lg:px-14 py-32">
+  <section id="serviziV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15">
     <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
-      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 01 / Servizi</div>
-      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Tre interventi.<br><em class="italic font-normal text-v2-ruggine">Un dossier firmato.</em></h2>
+      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 02 / Servizi</div>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium text-v2-panna">Tre interventi.<br><em class="italic font-normal text-v2-ruggine">Un dossier firmato.</em></h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-12">
       <article class="img-card relative">
-        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80" class="w-full aspect-[4/3] object-cover mb-6" alt="Sanificazione" style="filter:saturate(.6) contrast(1.05);" />
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80" class="w-full aspect-[4/3] object-cover mb-6" alt="Sanificazione" style="filter:saturate(.5) contrast(1.1);" />
         <p class="mono-eyebrow text-v2-ruggine mb-3">— 01</p>
-        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Sanificazione</h3>
-        <p class="font-cormorant italic text-lg text-v2-calce/80 mb-6 leading-relaxed">Rimozione di muffe, batteri e biofilm da split, condotte e UTA. Prodotti PMC certificati. Conforme UNI 10381-2.</p>
-        <ul class="mono-meta space-y-2 text-v2-calce/70 mb-8">
-          <li>→ Video-ispezione robotizzata</li>
-          <li>→ Tampone microbiologico</li>
-          <li>→ Certificato finale firmato</li>
+        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4 text-v2-panna">Sanificazione</h3>
+        <p class="font-cormorant italic text-lg text-v2-calce/80 mb-6 leading-relaxed">Aria pulita per un ambiente salubre. Eliminazione batteri, virus, muffe. Prodotti certificati ecocompatibili.</p>
+        <ul class="mono-meta space-y-2 text-v2-calce/70">
+          <li>→ Sanificazione profonda</li>
+          <li>→ Tecnologia avanzata</li>
+          <li>→ Nessun residuo nocivo</li>
         </ul>
       </article>
       <article class="img-card relative">
-        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=1200&q=80" class="w-full aspect-[4/3] object-cover mb-6" alt="Manutenzione" style="filter:saturate(.6) contrast(1.05);" />
+        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=1200&q=80" class="w-full aspect-[4/3] object-cover mb-6" alt="Manutenzione" style="filter:saturate(.5) contrast(1.1);" />
         <p class="mono-eyebrow text-v2-ruggine mb-3">— 02 · Più richiesto ★</p>
-        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Manutenzione</h3>
-        <p class="font-cormorant italic text-lg text-v2-calce/80 mb-6 leading-relaxed">Programmi su misura per residenziale e B2B. Calendario, promemoria, reportistica HACCP / D.Lgs 81/08.</p>
-        <ul class="mono-meta space-y-2 text-v2-calce/70 mb-8">
-          <li>→ Calendario su misura</li>
-          <li>→ Promemoria automatici</li>
-          <li>→ Documentazione audit-ready</li>
+        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4 text-v2-panna">Manutenzione</h3>
+        <p class="font-cormorant italic text-lg text-v2-calce/80 mb-6 leading-relaxed">Salute, comfort, efficienza energetica. Diagnosi personalizzata. Risparmio fino al 5–15%.</p>
+        <ul class="mono-meta space-y-2 text-v2-calce/70">
+          <li>→ Diagnosi personalizzata</li>
+          <li>→ Pulizia approfondita</li>
+          <li>→ Estensione vita impianto</li>
         </ul>
       </article>
       <article class="img-card relative">
-        <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=1200&q=80" class="w-full aspect-[4/3] object-cover mb-6" alt="Filtri elettrostatici" style="filter:saturate(.6) contrast(1.05);" />
+        <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=1200&q=80" class="w-full aspect-[4/3] object-cover mb-6" alt="Filtri elettrostatici" style="filter:saturate(.5) contrast(1.1);" />
         <p class="mono-eyebrow text-v2-ruggine mb-3">— 03</p>
-        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4">Filtri elettrostatici</h3>
-        <p class="font-cormorant italic text-lg text-v2-calce/80 mb-6 leading-relaxed">Filtrazione attiva ad alta efficienza. Riduzione misurabile di PM2.5, VOC e batteri aerosol.</p>
-        <ul class="mono-meta space-y-2 text-v2-calce/70 mb-8">
+        <h3 class="font-fraunces text-3xl md:text-4xl font-medium mb-4 text-v2-panna">Filtri Elettrostatici</h3>
+        <p class="font-cormorant italic text-lg text-v2-calce/80 mb-6 leading-relaxed">Innovazione per un'aria pura. Cariche elettrostatiche catturano polveri, allergeni, batteri.</p>
+        <ul class="mono-meta space-y-2 text-v2-calce/70">
           <li>→ Pulibili, riutilizzabili</li>
           <li>→ Bassissimo consumo</li>
-          <li>→ Installabili su impianti esistenti</li>
+          <li>→ Compatibilità HVAC</li>
         </ul>
       </article>
-    </div>
-  </section>
-
-  <!-- Settori asymmetric -->
-  <section id="settoriV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15">
-    <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
-      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 02 / Settori</div>
-      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Otto contesti.<br><em class="italic font-normal text-v2-ruggine">Un protocollo per ciascuno.</em></h2>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-v2-calce/15">
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 01</p>
-        <h3 class="font-fraunces text-2xl mb-2">Cliniche · Studi medici</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">Aria certificata sanitaria · audit ASL</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 02</p>
-        <h3 class="font-fraunces text-2xl mb-2">Uffici · Coworking</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">D.Lgs 81/08 art. 64</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 03</p>
-        <h3 class="font-fraunces text-2xl mb-2">Palestre · Spa</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">Carico microbiologico elevato</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 04</p>
-        <h3 class="font-fraunces text-2xl mb-2">Ristoranti · Hotel</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">Cappe, condotte, HACCP</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 05</p>
-        <h3 class="font-fraunces text-2xl mb-2">Scuole · Asili</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">Tutela dei più piccoli</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 06</p>
-        <h3 class="font-fraunces text-2xl mb-2">Industria · Capannoni</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">UTA grandi volumi</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 07</p>
-        <h3 class="font-fraunces text-2xl mb-2">Centri commerciali</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">Alti flussi pubblico</p>
-      </div>
-      <div class="bg-v2-nero p-7 hover:bg-v2-ombra transition cursor-none">
-        <p class="mono-eyebrow text-v2-ruggine mb-4">— 08</p>
-        <h3 class="font-fraunces text-2xl mb-2">Residenziale</h3>
-        <p class="font-cormorant italic text-sm text-v2-calce/65">Split, multi-split, VRF</p>
-      </div>
     </div>
   </section>
 
   <!-- Metodo -->
   <section id="metodoV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15 bg-v2-panna text-v2-nero">
     <div class="grid md:grid-cols-12 gap-12 items-end mb-20">
-      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 03 / Metodo</div>
-      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Quattro fasi.<br><em class="italic font-normal text-v2-ruggine">Una relazione firmata.</em></h2>
+      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 03 / How It Works</div>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Quattro fasi.<br><em class="italic font-normal text-v2-ruggine">Una garanzia.</em></h2>
     </div>
     <ol class="grid md:grid-cols-4 gap-12 border-t border-v2-nero pt-12">
       <li>
         <p class="font-fraunces text-7xl text-v2-ruggine italic mb-5 font-medium">i.</p>
-        <h3 class="font-fraunces text-2xl mb-3 font-medium">Consulenza</h3>
-        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Sopralluogo on-site, video-ispezione, tampone campione.</p>
+        <h3 class="font-fraunces text-2xl mb-3 font-medium">Diagnosi</h3>
+        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Sopralluogo, sonda endoscopica, prova video.</p>
       </li>
       <li>
         <p class="font-fraunces text-7xl text-v2-ruggine italic mb-5 font-medium">ii.</p>
         <h3 class="font-fraunces text-2xl mb-3 font-medium">Accordo</h3>
-        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Preventivo per fasce, prodotti, tempistiche, fermo impianto.</p>
+        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Preventivo dettagliato senza obblighi.</p>
       </li>
       <li>
         <p class="font-fraunces text-7xl text-v2-ruggine italic mb-5 font-medium">iii.</p>
         <h3 class="font-fraunces text-2xl mb-3 font-medium">Esecuzione</h3>
-        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Intervento programmato, video pre/post, prodotti PMC.</p>
+        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Intervento rapido, prodotti ecocompatibili.</p>
       </li>
       <li>
         <p class="font-fraunces text-7xl text-v2-ruggine italic mb-5 font-medium">iv.</p>
         <h3 class="font-fraunces text-2xl mb-3 font-medium">Controllo</h3>
-        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Tampone post, certificato firmato, archivio digitale.</p>
+        <p class="font-cormorant italic text-base text-v2-nero/75 leading-relaxed">Video post · garanzia <em>Soddisfatti o rimborsati</em>.</p>
       </li>
     </ol>
   </section>
 
   <!-- Founder -->
-  <section class="px-7 lg:px-14 py-32 border-t border-v2-calce/10">
+  <section id="chi-siamoV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15">
     <div class="grid md:grid-cols-12 gap-12 items-center">
       <div class="md:col-span-5">
         <div class="img-card">
-          <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&q=80" class="w-full" alt="Alex" style="filter:saturate(.5) contrast(1.1);" />
+          <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&q=80" class="w-full" alt="Alex" style="filter:saturate(.4) contrast(1.15);" />
         </div>
       </div>
       <div class="md:col-span-7">
         <p class="mono-eyebrow text-v2-ruggine mb-8">— 04 / Chi siamo</p>
-        <h2 class="font-fraunces display-md font-medium mb-10">Trent'anni dentro<br>le condotte<br><em class="italic font-normal text-v2-ruggine">prima di parlarne.</em></h2>
-        <p class="reveal font-cormorant italic text-lg leading-relaxed text-v2-calce/85 mb-8">Ariapura nasce a Castel Maggiore nei primi anni Novanta, quando "sanificazione" non era ancora una parola comune. Trent'anni dopo, l'aria che si respira è il prodotto. E il prodotto si misura.</p>
-        <p class="font-fraunces italic text-2xl md:text-3xl text-v2-ruggine leading-snug">"Il sopralluogo gratuito non è una promessa di vendita. È la prima diagnosi."</p>
-        <p class="mono-meta text-v2-calce/55 mt-8">— Alex / Fondatore / dal 1992</p>
+        <h2 class="font-fraunces display-md font-medium mb-10 text-v2-panna">Affidabilità<br>e <em class="italic font-normal text-v2-ruggine">innovazione,</em><br>da oltre trent'anni.</h2>
+        <p class="reveal font-cormorant italic text-lg leading-relaxed text-v2-calce/85 mb-8">Con oltre 30 anni di esperienza nell'installazione, manutenzione e sanificazione dei condizionatori, Ariapura è sinonimo di affidabilità e innovazione. Nata dall'esperienza consolidata in decenni di interventi, evolve grazie a tecnologie innovative e prodotti ecocompatibili.</p>
+        <p class="font-fraunces italic text-2xl md:text-3xl text-v2-ruggine leading-snug">"Garantire la massima qualità e sicurezza in ogni intervento."</p>
+        <p class="mono-meta text-v2-calce/55 mt-8">— Alex / Founder & CEO</p>
       </div>
     </div>
   </section>
@@ -749,30 +854,29 @@ tailwind.config = {
   <section id="faqV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15">
     <div class="grid md:grid-cols-12 gap-12 mb-12">
       <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 05 / FAQ</div>
-      <h2 class="md:col-span-9 font-fraunces display-lg font-medium">Prima del<br><em class="italic font-normal text-v2-ruggine">sopralluogo.</em></h2>
+      <h2 class="md:col-span-9 font-fraunces display-lg font-medium text-v2-panna">Prima del<br><em class="italic font-normal text-v2-ruggine">sopralluogo.</em></h2>
     </div>
     <div class="md:ml-[25%] divide-y divide-v2-calce/15">
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Pulizia o sanificazione?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">La pulizia rimuove polvere visibile. La sanificazione abbatte la carica microbica con prodotti PMC certificati ed è documentabile. Solo la seconda è valida per HACCP, ASL, RSPP.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Ogni quanto?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">UNI 10381-2: annuale (umidificazione acqua), biennale (vapore), triennale (senza umidificazione). Più frequente in sanitario, alimentare, palestre.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Accordo Stato-Regioni 2006?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Linee guida prevenzione legionellosi e manutenzione aeraulica. Adempimento art. 64 D.Lgs 81/08.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Ozono o PMC?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Ozono richiede ambiente vuoto. PMC permettono interventi rapidi con conferma analitica. Scegliamo per cantiere.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Cosa include il check-up gratuito?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Sopralluogo, video-ispezione campione, tampone se utile, report PDF in 48 ore. Senza obbligo.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium">Certificato finale?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Sì: relazione tecnica, video pre/post, scheda prodotti, certificato. Valido per HACCP, ASL, RSPP, audit.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium text-v2-panna">Pulire i filtri non basta?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">No. Non rimuove il biofilm — colonia resistente di muffe e batteri annidata in profondità. Solo la sanificazione profonda con prodotti ecocompatibili garantisce aria veramente pura.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium text-v2-panna">Ogni quanto sanificare?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Due volte all'anno (prima e dopo la stagione estiva). Più frequente in sanitari, B&B, palestre.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium text-v2-panna">Cosa include il Check-Up Video?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Sopralluogo, sonda endoscopica, prova video immediata, valutazione, preventivo. Zero vincoli.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium text-v2-panna">Sicuri per persone e animali?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Sì. Prodotti certificati ecocompatibili, senza residui chimici nocivi. Ambienti subito fruibili.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium text-v2-panna">Posso prenotare nel weekend?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed">Sì: anche Sabato e Domenica su prenotazione.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-fraunces text-2xl md:text-3xl font-medium text-v2-panna">Garanzia?</span><span class="chev text-v2-ruggine text-3xl font-light shrink-0">+</span></summary><p class="font-cormorant italic text-lg mt-5 text-v2-calce/80 max-w-2xl leading-relaxed"><em>Soddisfatti o rimborsati.</em> Se non soddisfa, ripetiamo senza costi.</p></details>
     </div>
   </section>
 
-  <!-- Form: conversational single-question -->
-  <section id="checkV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15 bg-v2-ombra">
+  <!-- Conversational form -->
+  <section id="checkV2" class="px-7 lg:px-14 py-32 border-t border-v2-calce/15 bg-v2-acciaio">
     <div class="grid md:grid-cols-12 gap-12 mb-16">
-      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 06 / Check-up</div>
-      <h2 class="md:col-span-9 font-fraunces display-md font-medium">Una domanda<br><em class="italic font-normal text-v2-ruggine">per volta.</em></h2>
+      <div class="md:col-span-3 mono-eyebrow text-v2-ruggine">— 06 / Check-Up Video Gratuito</div>
+      <h2 class="md:col-span-9 font-fraunces display-md font-medium text-v2-panna">Una domanda<br><em class="italic font-normal text-v2-ruggine">per volta.</em></h2>
     </div>
 
     <form class="md:ml-[25%] max-w-3xl space-y-6" action="https://api.web3forms.com/submit" method="POST" id="formV2">
       <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY" />
-      <input type="hidden" name="subject" value="Ariapura · Check-up · V2" />
+      <input type="hidden" name="subject" value="Ariapura · Check-Up Video Gratuito · V2" />
 
-      <!-- step counter -->
       <div class="flex justify-between mb-12 mono-eyebrow text-v2-calce/55">
         <span id="stepLabel">Domanda 1 di 5</span>
         <span class="flex gap-1.5">
@@ -785,31 +889,30 @@ tailwind.config = {
       </div>
 
       <div class="step on" data-step="1">
-        <p class="mono-eyebrow text-v2-ruggine mb-6">— i. Come si chiama?</p>
-        <input required name="nome" class="big-input text-v2-panna" placeholder="Il suo nome" />
+        <p class="mono-eyebrow text-v2-ruggine mb-6">— i. Nome e Cognome</p>
+        <input required name="nome" class="big-input text-v2-panna" placeholder="Il suo nome completo" />
         <button type="button" class="next mt-10 mono-eyebrow border-b border-v2-calce pb-1 hover:text-v2-ruggine hover:border-v2-ruggine">→ Avanti</button>
       </div>
       <div class="step" data-step="2">
-        <p class="mono-eyebrow text-v2-ruggine mb-6">— ii. Email + telefono</p>
-        <input required type="email" name="email" class="big-input text-v2-panna mb-6" placeholder="email@dominio.it" />
-        <input required name="telefono" class="big-input text-v2-panna" placeholder="Numero di telefono" />
+        <p class="mono-eyebrow text-v2-ruggine mb-6">— ii. Azienda / Ruolo</p>
+        <input name="azienda" class="big-input text-v2-panna" placeholder="Opzionale per richieste residenziali" />
         <button type="button" class="next mt-10 mono-eyebrow border-b border-v2-calce pb-1 hover:text-v2-ruggine hover:border-v2-ruggine">→ Avanti</button>
       </div>
       <div class="step" data-step="3">
-        <p class="mono-eyebrow text-v2-ruggine mb-6">— iii. In quale settore?</p>
-        <select required name="settore" class="big-input text-v2-panna"><option value="">— scegli un settore —</option><option>Clinica · Studio medico</option><option>Ufficio · Coworking</option><option>Palestra · Spa</option><option>Ristorante · Hotel</option><option>Scuola · Asilo</option><option>Industria · Capannone</option><option>Centro commerciale</option><option>Residenziale</option></select>
+        <p class="mono-eyebrow text-v2-ruggine mb-6">— iii. Email Aziendale</p>
+        <input required type="email" name="email" class="big-input text-v2-panna" placeholder="email@dominio.it" />
         <button type="button" class="next mt-10 mono-eyebrow border-b border-v2-calce pb-1 hover:text-v2-ruggine hover:border-v2-ruggine">→ Avanti</button>
       </div>
       <div class="step" data-step="4">
-        <p class="mono-eyebrow text-v2-ruggine mb-6">— iv. CAP o comune?</p>
-        <input name="cap" class="big-input text-v2-panna" placeholder="40013 / Castel Maggiore" />
+        <p class="mono-eyebrow text-v2-ruggine mb-6">— iv. Telefono Diretto</p>
+        <input required name="telefono" class="big-input text-v2-panna" placeholder="+39 ..." />
         <button type="button" class="next mt-10 mono-eyebrow border-b border-v2-calce pb-1 hover:text-v2-ruggine hover:border-v2-ruggine">→ Avanti</button>
       </div>
       <div class="step" data-step="5">
-        <p class="mono-eyebrow text-v2-ruggine mb-6">— v. Cosa vuole farci sapere?</p>
-        <textarea name="note" rows="3" class="big-input text-v2-panna resize-none" placeholder="Note · opzionale"></textarea>
-        <button type="submit" class="magnet mt-10 inline-flex items-center gap-3 mono-eyebrow text-v2-nero bg-v2-ruggine hover:bg-v2-panna rounded-full px-8 py-4 transition">→ Invia richiesta</button>
-        <p class="mono-meta text-v2-calce/55 mt-6">Trattamento dati conforme al GDPR.</p>
+        <p class="mono-eyebrow text-v2-ruggine mb-6">— v. Messaggio / Note</p>
+        <textarea name="note" rows="3" class="big-input text-v2-panna resize-none" placeholder="Cosa vuole farci sapere? · opzionale"></textarea>
+        <button type="submit" class="magnet mt-10 inline-flex items-center gap-3 mono-eyebrow text-v2-nero bg-v2-ruggine hover:bg-v2-panna rounded-full px-8 py-4 transition">→ Sì, voglio il Check-Up Video Gratuito!</button>
+        <p class="mono-meta text-v2-calce/55 mt-6">Garanzia <em>Soddisfatti o rimborsati</em> · trattamento dati conforme GDPR.</p>
       </div>
     </form>
   </section>
@@ -817,19 +920,20 @@ tailwind.config = {
   <footer class="px-7 lg:px-14 py-16 border-t border-v2-calce/15">
     <div class="grid md:grid-cols-12 gap-10 items-end">
       <div class="md:col-span-6">
-        <p class="font-fraunces text-5xl mb-4 text-v2-panna">Ariapura<span class="text-v2-ruggine">.</span></p>
-        <p class="font-cormorant italic text-xl text-v2-calce/65 max-w-md">Sanificazione professionale di impianti di climatizzazione e condotte aerauliche. Castel Maggiore (BO) · dal 1992.</p>
+        <p class="font-fraunces text-5xl mb-4 text-v2-panna">Aria<span class="text-v2-ruggine">·</span>pura</p>
+        <p class="font-cormorant italic text-xl text-v2-calce/65 max-w-md">Soluzioni innovative per un'aria pulita e salubre, ogni giorno. Castel Maggiore (BO).</p>
       </div>
       <div class="md:col-span-3 mono-meta text-v2-calce/65">
         <p class="mono-eyebrow text-v2-ruggine mb-3">— Sede</p>
-        Via Lame 261<br>40013 Castel Maggiore (BO)<br><a href="tel:+390510828717" class="hover:text-v2-ruggine">051 082 8717</a><br><a href="mailto:info@ariapura.org" class="hover:text-v2-ruggine">info@ariapura.org</a>
+        Via Lame 261<br>40013 Castel Maggiore (BO)<br><a href="tel:+390510828717" class="hover:text-v2-ruggine">051 08 28 717</a><br><a href="mailto:info@ariapura.org" class="hover:text-v2-ruggine">info@ariapura.org</a>
       </div>
       <div class="md:col-span-3 mono-meta text-v2-calce/65">
         <p class="mono-eyebrow text-v2-ruggine mb-3">— Orari</p>
-        Lun–Ven<br>09:00–13:00<br>14:30–17:30
+        Lun–Ven · 09:00–13:00 / 14:30–17:30<br>Sab–Dom · su prenotazione<br><br>
+        <p class="mono-eyebrow text-v2-ruggine mb-2">— @ariapurabologna</p>
       </div>
     </div>
-    <p class="mono-meta text-v2-calce/40 mt-12 pt-6 border-t border-v2-calce/10">Demo by <a href="https://www.skynetjoe.com" class="underline hover:text-v2-ruggine">SkynetLabs</a> · skynetjoe.com — anteprima per revisione cliente.</p>
+    <p class="mono-meta text-v2-calce/40 mt-12 pt-6 border-t border-v2-calce/10">Demo by <a href="https://www.skynetjoe.com" class="underline hover:text-v2-ruggine">SkynetLabs</a> · contenuto verbatim ariapura.org.</p>
   </footer>
 
   </div>
@@ -841,62 +945,88 @@ tailwind.config = {
 <main class="variant v3 grain" style="background:#E8E9E4">
   <div class="bg-v3-nebbia text-v3-carbone font-manrope">
 
-  <!-- Sticky TOC -->
   <aside class="toc">
     <a href="#heroV3" class="on">i · Indice</a>
     <a href="#serviziV3">ii · Servizi</a>
-    <a href="#settoriV3">iii · Settori</a>
+    <a href="#perchiV3">iii · Per chi</a>
     <a href="#metodoV3">iv · Metodo</a>
-    <a href="#faqV3">v · FAQ</a>
-    <a href="#checkV3">vi · Check-up</a>
+    <a href="#chi-siamoV3">v · Chi siamo</a>
+    <a href="#faqV3">vi · FAQ</a>
+    <a href="#checkV3">vii · Check-Up</a>
   </aside>
 
   <header class="absolute top-0 inset-x-0 z-30 px-7 lg:px-14 py-7 flex items-center justify-between">
     <a href="#" class="font-instrument text-3xl tracking-tight">Ariapura</a>
     <nav class="hidden md:flex gap-9 mono-eyebrow text-v3-carbone/70">
       <a href="#serviziV3" class="hover:text-v3-eucalipto">Servizi</a>
-      <a href="#settoriV3" class="hover:text-v3-eucalipto">Settori</a>
+      <a href="#perchiV3" class="hover:text-v3-eucalipto">Per chi</a>
       <a href="#metodoV3" class="hover:text-v3-eucalipto">Metodo</a>
       <a href="#faqV3" class="hover:text-v3-eucalipto">FAQ</a>
     </nav>
-    <a href="#checkV3" class="hidden md:inline-flex items-center gap-2 mono-eyebrow text-v3-nebbia bg-v3-carbone hover:bg-v3-eucalipto rounded-full px-4 py-2 transition">→ Check-up</a>
+    <a href="#checkV3" class="hidden md:inline-flex items-center gap-2 mono-eyebrow text-v3-nebbia bg-v3-carbone rounded-full px-4 py-2 hover:bg-v3-eucalipto transition">→ Check-Up</a>
   </header>
 
-  <!-- Anti-hero split 50/50 -->
-  <section id="heroV3" class="relative min-h-screen grid md:grid-cols-2 items-center px-7 lg:px-14 pt-24">
+  <!-- Anti-hero magazine cover -->
+  <section id="heroV3" class="relative min-h-screen grid md:grid-cols-2 items-center px-7 lg:px-14 pt-24 gap-12">
     <div>
-      <p class="mono-eyebrow text-v3-eucalipto mb-8">— Numero 01 · MMXXVI · Bologna</p>
+      <p class="mono-eyebrow text-v3-eucalipto mb-8">— Numero 01 · MMXXVI · Bologna · Castel Maggiore</p>
       <h1 class="font-instrument" style="font-size:clamp(3rem,11vw,12rem); line-height:.86; letter-spacing:-0.025em;">
-        <span class="block">Aria <em class="italic">non</em></span>
-        <span class="block">è un detta-</span>
-        <span class="block italic text-v3-eucalipto">glio.</span>
+        <span class="block">Proteggi</span>
+        <span class="block">la tua</span>
+        <span class="block italic text-v3-eucalipto">salute.</span>
       </h1>
-      <div class="mt-10 flex items-center gap-6 mono-meta text-v3-carbone/60">
+      <div class="mt-10 flex items-center gap-6 mono-meta text-v3-carbone/65 max-w-md">
         <span class="hairline w-12 border-v3-carbone"></span>
-        <span>Trent'anni di sanificazione aeraulica<br>certificata FGAS · ACCREDIA</span>
+        <span>Soluzioni innovative per un'aria pulita e salubre, ogni giorno. Sanificazione condizionatori a Bologna · oltre 30 anni.</span>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a href="#checkV3" class="magnet inline-flex items-center gap-3 mono-eyebrow text-v3-nebbia bg-v3-carbone hover:bg-v3-eucalipto rounded-full px-7 py-4 transition">→ Sì, voglio il Check-Up Video</a>
+        <a href="https://wa.me/390510828717" class="magnet inline-flex items-center gap-3 mono-eyebrow border-b border-v3-carbone pb-1 hover:text-v3-eucalipto hover:border-v3-eucalipto">↗ WhatsApp · risposta in giornata</a>
       </div>
     </div>
     <div class="relative mt-12 md:mt-0">
       <div class="img-card">
-        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=80" class="w-full aspect-[4/5] object-cover" alt="Ispezione condotte" style="filter:saturate(.5) contrast(1.05);" />
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=80" class="w-full aspect-[4/5] object-cover" alt="Sanificazione condizionatore" style="filter:saturate(.5) contrast(1.05);" />
       </div>
       <div class="mt-4 flex justify-between mono-meta text-v3-carbone/55">
-        <span>↑ Fig. 01 · Video-ispezione robotizzata</span>
+        <span>↑ Fig. 01 · Sonda endoscopica · cantiere reale</span>
         <span>n.01 / 2026</span>
       </div>
     </div>
   </section>
 
-  <!-- Editorial intro band -->
+  <!-- Manifesto biofilm -->
   <section class="px-7 lg:px-14 py-24 border-t border-v3-carbone/15">
     <div class="grid md:grid-cols-12 gap-12">
       <div class="md:col-span-4">
-        <p class="mono-eyebrow text-v3-eucalipto">— Sommario · 2026</p>
+        <p class="mono-eyebrow text-v3-eucalipto">— Sommario · Il pericolo invisibile</p>
       </div>
       <div class="md:col-span-8">
         <p class="reveal font-instrument italic display-md text-v3-carbone leading-tight">
-          Ariapura sanifica condotte aerauliche, split, UTA e filtri da trent'anni a Castel Maggiore. Ogni cantiere finisce con la stessa cosa: una relazione tecnica firmata, video pre e post intervento, e un certificato valido per HACCP, ASL e RSPP.
+          Pulire i filtri non basta. Nel 90% degli impianti HVAC aziendali si nasconde il Biofilm — colonia resistente di muffe e batteri che la manutenzione ordinaria non rimuove e che i tuoi collaboratori respirano ogni giorno.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats counters -->
+  <section class="px-7 lg:px-14 py-20 border-t border-v3-carbone/15 bg-v3-lino">
+    <div class="grid md:grid-cols-4 gap-px">
+      <div class="md:border-r md:border-v3-carbone/15 md:pr-8">
+        <p class="font-instrument italic text-7xl text-v3-forestaScura count-up" data-target="850">0<span class="text-3xl">+</span></p>
+        <p class="mono-eyebrow text-v3-carbone/60 mt-3">Progetti completati</p>
+      </div>
+      <div class="md:border-r md:border-v3-carbone/15 md:px-8">
+        <p class="font-instrument italic text-7xl text-v3-forestaScura count-up" data-target="100">0<span class="text-3xl">%</span></p>
+        <p class="mono-eyebrow text-v3-carbone/60 mt-3">Clienti soddisfatti</p>
+      </div>
+      <div class="md:border-r md:border-v3-carbone/15 md:px-8">
+        <p class="font-instrument italic text-7xl text-v3-forestaScura count-up" data-target="30">0<span class="text-3xl">+</span></p>
+        <p class="mono-eyebrow text-v3-carbone/60 mt-3">Anni nel settore</p>
+      </div>
+      <div class="md:pl-8">
+        <p class="font-instrument italic text-3xl md:text-4xl text-v3-forestaScura leading-tight">FGAS<br>ACCREDIA</p>
+        <p class="mono-eyebrow text-v3-carbone/60 mt-3">Certificazioni</p>
       </div>
     </div>
   </section>
@@ -904,26 +1034,24 @@ tailwind.config = {
   <!-- Marquee -->
   <section class="marquee py-6 border-y border-v3-carbone/15">
     <div class="marquee-track mono-eyebrow text-v3-carbone/55">
-      <span>UNI 10381-2</span><span class="text-v3-eucalipto">○</span>
-      <span>UNI EN 15780</span><span class="text-v3-eucalipto">○</span>
-      <span>FGAS</span><span class="text-v3-eucalipto">○</span>
-      <span>ACCREDIA</span><span class="text-v3-eucalipto">○</span>
-      <span>Accordo Stato-Regioni 2006</span><span class="text-v3-eucalipto">○</span>
-      <span>D.Lgs 81/08 art. 64</span><span class="text-v3-eucalipto">○</span>
-      <span>Prodotti PMC certificati</span><span class="text-v3-eucalipto">○</span>
-      <span>Video-ispezione robot</span><span class="text-v3-eucalipto">○</span>
-      <span>UNI 10381-2</span><span class="text-v3-eucalipto">○</span>
-      <span>UNI EN 15780</span><span class="text-v3-eucalipto">○</span>
-      <span>FGAS</span><span class="text-v3-eucalipto">○</span>
-      <span>ACCREDIA</span><span class="text-v3-eucalipto">○</span>
-      <span>Accordo Stato-Regioni 2006</span><span class="text-v3-eucalipto">○</span>
-      <span>D.Lgs 81/08 art. 64</span><span class="text-v3-eucalipto">○</span>
-      <span>Prodotti PMC certificati</span><span class="text-v3-eucalipto">○</span>
-      <span>Video-ispezione robot</span><span class="text-v3-eucalipto">○</span>
+      <span>Sonda Endoscopica</span><span class="text-v3-eucalipto">○</span>
+      <span>Prova Video Immediata</span><span class="text-v3-eucalipto">○</span>
+      <span>Zero Vincoli</span><span class="text-v3-eucalipto">○</span>
+      <span>FGAS · ACCREDIA</span><span class="text-v3-eucalipto">○</span>
+      <span>Soddisfatti o rimborsati</span><span class="text-v3-eucalipto">○</span>
+      <span>Prodotti ecocompatibili</span><span class="text-v3-eucalipto">○</span>
+      <span>WhatsApp · Sab/Dom su prenotazione</span><span class="text-v3-eucalipto">○</span>
+      <span>Sonda Endoscopica</span><span class="text-v3-eucalipto">○</span>
+      <span>Prova Video Immediata</span><span class="text-v3-eucalipto">○</span>
+      <span>Zero Vincoli</span><span class="text-v3-eucalipto">○</span>
+      <span>FGAS · ACCREDIA</span><span class="text-v3-eucalipto">○</span>
+      <span>Soddisfatti o rimborsati</span><span class="text-v3-eucalipto">○</span>
+      <span>Prodotti ecocompatibili</span><span class="text-v3-eucalipto">○</span>
+      <span>WhatsApp · Sab/Dom su prenotazione</span><span class="text-v3-eucalipto">○</span>
     </div>
   </section>
 
-  <!-- Servizi as magazine spread -->
+  <!-- Servizi magazine spread -->
   <section id="serviziV3" class="px-7 lg:px-14 py-32">
     <div class="grid md:grid-cols-12 gap-12 mb-20">
       <div class="md:col-span-4">
@@ -931,162 +1059,151 @@ tailwind.config = {
         <h2 class="font-instrument italic display-lg">Tre interventi.<br>Un dossier.</h2>
       </div>
       <div class="md:col-span-7 md:col-start-6 self-end">
-        <p class="font-manrope text-base text-v3-carbone/70 leading-relaxed max-w-md">Niente generiche "pulizie". Ogni cantiere produce documentazione completa per HACCP, ASL e RSPP — incluso il check-up gratuito.</p>
+        <p class="font-manrope text-base text-v3-carbone/70 leading-relaxed max-w-md">Niente generiche "pulizie". Ogni cantiere produce documentazione completa, prodotti ecocompatibili, e garanzia <em class="not-italic">Soddisfatti o rimborsati</em>.</p>
       </div>
     </div>
 
     <div class="space-y-px bg-v3-carbone/15">
-      <article class="bg-v3-nebbia grid md:grid-cols-12 gap-10 p-9 md:p-14 group">
+      <article class="bg-v3-nebbia grid md:grid-cols-12 gap-10 p-9 md:p-14">
         <p class="md:col-span-2 font-instrument italic text-7xl text-v3-eucalipto">i.</p>
         <div class="md:col-span-4">
           <p class="mono-eyebrow text-v3-eucalipto mb-3">— Sanificazione</p>
-          <h3 class="font-instrument italic text-4xl md:text-5xl">Muffe, batteri, biofilm.</h3>
+          <h3 class="font-instrument italic text-4xl md:text-5xl">Aria pulita per un ambiente salubre.</h3>
         </div>
         <div class="md:col-span-6">
-          <p class="font-manrope text-base text-v3-carbone/80 leading-relaxed mb-5">Rimozione di muffe, batteri e biofilm da split, condotte e UTA. Prodotti PMC certificati. Conforme UNI 10381-2 e UNI EN 15780.</p>
+          <p class="font-manrope text-base text-v3-carbone/80 leading-relaxed mb-5">Un condizionatore non sanificato può diventare serbatoio di batteri, virus, muffe. Sanificazione completa con prodotti certificati ecocompatibili. Nessun residuo chimico nocivo.</p>
           <ul class="mono-meta space-y-1.5 text-v3-carbone/65">
-            <li>→ Video-ispezione robotizzata pre-post</li>
-            <li>→ Tampone microbiologico campione</li>
-            <li>→ Certificato finale firmato</li>
+            <li>→ Sanificazione profonda</li>
+            <li>→ Tecnologia avanzata</li>
+            <li>→ Ambiente subito fruibile</li>
           </ul>
         </div>
       </article>
-      <article class="bg-v3-nebbia grid md:grid-cols-12 gap-10 p-9 md:p-14 group">
+      <article class="bg-v3-nebbia grid md:grid-cols-12 gap-10 p-9 md:p-14">
         <p class="md:col-span-2 font-instrument italic text-7xl text-v3-eucalipto">ii.</p>
         <div class="md:col-span-4">
           <p class="mono-eyebrow text-v3-eucalipto mb-3">— Manutenzione · ★ più richiesta</p>
-          <h3 class="font-instrument italic text-4xl md:text-5xl">Calendario, promemoria, audit-ready.</h3>
+          <h3 class="font-instrument italic text-4xl md:text-5xl">Salute, comfort, efficienza.</h3>
         </div>
         <div class="md:col-span-6">
-          <p class="font-manrope text-base text-v3-carbone/80 leading-relaxed mb-5">Programmi di manutenzione personalizzati per residenziale e B2B. Calendario su misura, promemoria automatici, reportistica conforme HACCP / D.Lgs 81/08.</p>
+          <p class="font-manrope text-base text-v3-carbone/80 leading-relaxed mb-5">Manutenzione regolare per residenziale e B2B. Diagnosi personalizzata, pulizia approfondita, ottimizzazione energetica fino al 5–15%, estensione vita utile dell'impianto.</p>
           <ul class="mono-meta space-y-1.5 text-v3-carbone/65">
-            <li>→ Calendario interventi su misura</li>
-            <li>→ Promemoria automatici cliente</li>
-            <li>→ Documentazione conforme audit</li>
+            <li>→ Diagnosi personalizzata</li>
+            <li>→ Calendario su misura</li>
+            <li>→ Risparmio energetico 5–15%</li>
           </ul>
         </div>
       </article>
-      <article class="bg-v3-nebbia grid md:grid-cols-12 gap-10 p-9 md:p-14 group">
+      <article class="bg-v3-nebbia grid md:grid-cols-12 gap-10 p-9 md:p-14">
         <p class="md:col-span-2 font-instrument italic text-7xl text-v3-eucalipto">iii.</p>
         <div class="md:col-span-4">
-          <p class="mono-eyebrow text-v3-eucalipto mb-3">— Filtri elettrostatici</p>
-          <h3 class="font-instrument italic text-4xl md:text-5xl">PM2.5 misurabile.</h3>
+          <p class="mono-eyebrow text-v3-eucalipto mb-3">— Filtri Elettrostatici</p>
+          <h3 class="font-instrument italic text-4xl md:text-5xl">Innovazione per un'aria pura.</h3>
         </div>
         <div class="md:col-span-6">
-          <p class="font-manrope text-base text-v3-carbone/80 leading-relaxed mb-5">Filtrazione attiva ad alta efficienza per particolato fine, VOC e batteri aerosol. Pulibili, riutilizzabili, bassissimo consumo energetico.</p>
+          <p class="font-manrope text-base text-v3-carbone/80 leading-relaxed mb-5">Cariche elettrostatiche catturano polveri, allergeni, batteri. Pulibili e riutilizzabili. Bassissimo consumo energetico. Compatibilità con sistemi HVAC esistenti.</p>
           <ul class="mono-meta space-y-1.5 text-v3-carbone/65">
-            <li>→ Riduzione PM2.5 misurabile</li>
-            <li>→ Pulibili e riutilizzabili</li>
-            <li>→ Installabili su impianti esistenti</li>
+            <li>→ Elevata efficienza filtrazione</li>
+            <li>→ Lunga durata, bassa manutenzione</li>
+            <li>→ Risparmio energetico</li>
           </ul>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- Settori carousel grid -->
-  <section id="settoriV3" class="px-7 lg:px-14 py-32 border-t border-v3-carbone/15 bg-v3-lino">
+  <!-- Per chi (3D tilt cards) -->
+  <section id="perchiV3" class="px-7 lg:px-14 py-32 border-t border-v3-carbone/15 bg-v3-lino">
     <div class="grid md:grid-cols-12 gap-12 mb-20">
       <div class="md:col-span-4">
-        <p class="mono-eyebrow text-v3-forestaScura mb-6">— iii / Settori</p>
-        <h2 class="font-instrument italic display-lg text-v3-carbone">Otto contesti.<br>Un protocollo.</h2>
+        <p class="mono-eyebrow text-v3-forestaScura mb-6">— iii / Per chi</p>
+        <h2 class="font-instrument italic display-lg">Sei tipi di cliente.<br>Un protocollo.</h2>
       </div>
       <div class="md:col-span-7 md:col-start-6 self-end">
-        <p class="font-manrope text-base text-v3-carbone/70 leading-relaxed max-w-md">Ogni settore ha rischi propri: HACCP per la ristorazione, D.Lgs 81 per gli uffici, protocolli sanitari per cliniche, controllo ASL per le palestre.</p>
+        <p class="font-manrope text-base text-v3-carbone/70 leading-relaxed max-w-md">Studi medici, allergici, uffici, hotel, famiglie con animali, palestre. Ogni profilo richiede protocollo dedicato.</p>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <a href="#" class="img-card aspect-[3/4] block">
-        <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccf?w=800&q=80" class="w-full h-full object-cover" alt="Cliniche" style="filter:saturate(.55) contrast(1.05);" />
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="tilt"><div class="tilt-inner img-card aspect-[4/5]">
+        <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccf?w=800&q=80" class="w-full h-full object-cover" alt="Studi medici" style="filter:saturate(.55) contrast(1.05);" />
         <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
           <p class="mono-eyebrow text-v3-lino mb-2">— 01</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Cliniche</h3>
-          <p class="mono-meta text-v3-nebbia/75">Audit ASL · sanitario</p>
+          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Studi medici</h3>
+          <p class="mono-meta text-v3-nebbia/75">Aria certificata sanitaria</p>
         </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
+      </div></div>
+      <div class="tilt"><div class="tilt-inner img-card aspect-[4/5]">
+        <img src="https://images.unsplash.com/photo-1551601651-bc60f254d532?w=800&q=80" class="w-full h-full object-cover" alt="Allergici" style="filter:saturate(.55) contrast(1.05);" />
+        <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <p class="mono-eyebrow text-v3-lino mb-2">— 02</p>
+          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Allergici · asmatici</h3>
+          <p class="mono-meta text-v3-nebbia/75">Riduzione pollini e allergeni</p>
+        </div>
+      </div></div>
+      <div class="tilt"><div class="tilt-inner img-card aspect-[4/5]">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" class="w-full h-full object-cover" alt="Uffici" style="filter:saturate(.55) contrast(1.05);" />
         <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
-          <p class="mono-eyebrow text-v3-lino mb-2">— 02</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Uffici</h3>
-          <p class="mono-meta text-v3-nebbia/75">D.Lgs 81/08 art. 64</p>
-        </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" class="w-full h-full object-cover" alt="Palestre" style="filter:saturate(.55) contrast(1.05);" />
-        <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
           <p class="mono-eyebrow text-v3-lino mb-2">— 03</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Palestre</h3>
-          <p class="mono-meta text-v3-nebbia/75">Carico microbiologico</p>
+          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Uffici · studi pro</h3>
+          <p class="mono-meta text-v3-nebbia/75">D.Lgs 81/2008 art. 64</p>
         </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" class="w-full h-full object-cover" alt="Ristoranti" style="filter:saturate(.55) contrast(1.05);" />
-        <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
-          <p class="mono-eyebrow text-v3-lino mb-2">— 04</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Ristoranti</h3>
-          <p class="mono-meta text-v3-nebbia/75">Cappe + HACCP</p>
-        </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
+      </div></div>
+      <div class="tilt"><div class="tilt-inner img-card aspect-[4/5]">
         <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80" class="w-full h-full object-cover" alt="Hotel" style="filter:saturate(.55) contrast(1.05);" />
         <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
+          <p class="mono-eyebrow text-v3-lino mb-2">— 04</p>
+          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Hotel · B&B</h3>
+          <p class="mono-meta text-v3-nebbia/75">Comfort ospite + recensioni</p>
+        </div>
+      </div></div>
+      <div class="tilt"><div class="tilt-inner img-card aspect-[4/5]">
+        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&q=80" class="w-full h-full object-cover" alt="Animali" style="filter:saturate(.55) contrast(1.05);" />
+        <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
           <p class="mono-eyebrow text-v3-lino mb-2">— 05</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Hotel</h3>
-          <p class="mono-meta text-v3-nebbia/75">Comfort + sicurezza</p>
+          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Famiglie con animali</h3>
+          <p class="mono-meta text-v3-nebbia/75">Carica microbica più alta</p>
         </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
-        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" class="w-full h-full object-cover" alt="Scuole" style="filter:saturate(.55) contrast(1.05);" />
+      </div></div>
+      <div class="tilt"><div class="tilt-inner img-card aspect-[4/5]">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" class="w-full h-full object-cover" alt="Palestre" style="filter:saturate(.55) contrast(1.05);" />
         <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
+        <div class="absolute inset-0 flex flex-col justify-end p-6">
           <p class="mono-eyebrow text-v3-lino mb-2">— 06</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Scuole</h3>
-          <p class="mono-meta text-v3-nebbia/75">Più piccoli</p>
+          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Palestre · ristoranti</h3>
+          <p class="mono-meta text-v3-nebbia/75">Adempimento normativo</p>
         </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
-        <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=800&q=80" class="w-full h-full object-cover" alt="Industria" style="filter:saturate(.55) contrast(1.05);" />
-        <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
-          <p class="mono-eyebrow text-v3-lino mb-2">— 07</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Industria</h3>
-          <p class="mono-meta text-v3-nebbia/75">UTA grandi volumi</p>
-        </div>
-      </a>
-      <a href="#" class="img-card aspect-[3/4] block">
-        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80" class="w-full h-full object-cover" alt="Residenziale" style="filter:saturate(.55) contrast(1.05);" />
-        <div class="absolute inset-0 bg-gradient-to-t from-v3-carbone/85 via-v3-carbone/20 to-transparent"></div>
-        <div class="absolute inset-0 flex flex-col justify-end p-5">
-          <p class="mono-eyebrow text-v3-lino mb-2">— 08</p>
-          <h3 class="font-instrument italic text-2xl text-v3-nebbia">Residenziale</h3>
-          <p class="mono-meta text-v3-nebbia/75">Split, multi, VRF</p>
-        </div>
-      </a>
+      </div></div>
     </div>
   </section>
 
   <!-- Founder magazine -->
-  <section class="px-7 lg:px-14 py-32 border-t border-v3-carbone/15">
+  <section id="chi-siamoV3" class="px-7 lg:px-14 py-32 border-t border-v3-carbone/15">
     <div class="grid md:grid-cols-12 gap-12 items-start">
       <div class="md:col-span-5 md:sticky md:top-24">
         <div class="img-card">
           <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1200&q=80" class="w-full" alt="Alex" style="filter:saturate(.5) contrast(1.05);" />
         </div>
-        <p class="mono-meta text-v3-carbone/60 mt-4">↑ Fig. 02 · Alex, fondatore · 1992</p>
+        <p class="mono-meta text-v3-carbone/60 mt-4">↑ Fig. 02 · Alex · Founder & CEO</p>
       </div>
       <div class="md:col-span-7">
-        <p class="mono-eyebrow text-v3-eucalipto mb-8">— iv / Chi siamo</p>
-        <h2 class="font-instrument italic display-md mb-10">Trent'anni dentro<br>le condotte<br>prima di parlarne.</h2>
-        <p class="reveal dropcap font-instrument italic text-2xl leading-relaxed text-v3-carbone/85 mb-8">Ariapura nasce a Castel Maggiore nei primi anni Novanta, quando "sanificazione" non era ancora una parola comune. Trent'anni dopo, l'aria che si respira è il prodotto. E il prodotto si misura.</p>
-        <p class="font-instrument italic text-3xl text-v3-forestaScura leading-snug border-l-2 border-v3-eucalipto pl-6">"Il sopralluogo gratuito non è una promessa di vendita. È la prima diagnosi."</p>
-        <p class="mono-meta text-v3-carbone/55 mt-8">— Alex / Fondatore / dal 1992</p>
+        <p class="mono-eyebrow text-v3-eucalipto mb-8">— v / Chi siamo</p>
+        <h2 class="font-instrument italic display-md mb-10">Affidabilità<br>e innovazione,<br>da <em>oltre</em> trent'anni.</h2>
+        <p class="reveal dropcap font-instrument italic text-2xl leading-relaxed text-v3-carbone/85 mb-8">Con oltre 30 anni di esperienza nel settore dell'installazione, manutenzione e sanificazione dei condizionatori, Ariapura è sinonimo di affidabilità e innovazione. Una semplice pulizia dei filtri non basta: solo una sanificazione profonda e antibatterica delle unità interne può assicurare un'aria veramente pura.</p>
+
+        <div class="grid grid-cols-3 gap-4 my-12">
+          <div class="border-t border-v3-carbone pt-4"><p class="font-instrument italic text-xl">Qualità</p><p class="mono-meta text-v3-carbone/55 mt-1">Standard tecnico</p></div>
+          <div class="border-t border-v3-carbone pt-4"><p class="font-instrument italic text-xl">Affidabilità</p><p class="mono-meta text-v3-carbone/55 mt-1">Trent'anni</p></div>
+          <div class="border-t border-v3-carbone pt-4"><p class="font-instrument italic text-xl">Professionalità</p><p class="mono-meta text-v3-carbone/55 mt-1">Tecnici specializzati</p></div>
+        </div>
+
+        <p class="font-instrument italic text-3xl text-v3-forestaScura leading-snug border-l-2 border-v3-eucalipto pl-6">"Garantire la massima qualità e sicurezza in ogni intervento, trasformando ogni ambiente in uno spazio salubre e confortevole."</p>
+        <p class="mono-meta text-v3-carbone/55 mt-8">— Alex / Founder & CEO / oltre 30 anni</p>
       </div>
     </div>
   </section>
@@ -1095,30 +1212,30 @@ tailwind.config = {
   <section id="metodoV3" class="px-7 lg:px-14 py-32 bg-v3-carbone text-v3-nebbia border-t border-v3-carbone">
     <div class="grid md:grid-cols-12 gap-12 mb-20">
       <div class="md:col-span-4">
-        <p class="mono-eyebrow text-v3-eucalipto mb-6">— v / Metodo</p>
+        <p class="mono-eyebrow text-v3-eucalipto mb-6">— iv / How It Works</p>
         <h2 class="font-instrument italic display-lg">Quattro fasi.<br>Un dossier.</h2>
       </div>
     </div>
     <ol class="grid md:grid-cols-4 gap-px bg-v3-nebbia/15 border-t border-v3-nebbia/15 pt-px">
       <li class="bg-v3-carbone p-9">
         <p class="font-instrument italic text-7xl text-v3-eucalipto mb-5">i.</p>
-        <h3 class="font-instrument italic text-3xl mb-3">Consulenza</h3>
-        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Sopralluogo on-site, video-ispezione, tampone campione.</p>
+        <h3 class="font-instrument italic text-3xl mb-3">Diagnosi</h3>
+        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Sopralluogo · sonda endoscopica · prova video.</p>
       </li>
       <li class="bg-v3-carbone p-9">
         <p class="font-instrument italic text-7xl text-v3-eucalipto mb-5">ii.</p>
         <h3 class="font-instrument italic text-3xl mb-3">Accordo</h3>
-        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Preventivo per fasce, prodotti, tempistiche.</p>
+        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Preventivo dettagliato senza obblighi.</p>
       </li>
       <li class="bg-v3-carbone p-9">
         <p class="font-instrument italic text-7xl text-v3-eucalipto mb-5">iii.</p>
         <h3 class="font-instrument italic text-3xl mb-3">Esecuzione</h3>
-        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Intervento programmato, video pre/post, prodotti PMC.</p>
+        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Intervento rapido · prodotti ecocompatibili.</p>
       </li>
       <li class="bg-v3-carbone p-9">
         <p class="font-instrument italic text-7xl text-v3-eucalipto mb-5">iv.</p>
         <h3 class="font-instrument italic text-3xl mb-3">Controllo</h3>
-        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Tampone post, certificato firmato, archivio digitale.</p>
+        <p class="font-manrope text-base text-v3-nebbia/75 leading-relaxed">Video post · garanzia <em>Soddisfatti o rimborsati</em>.</p>
       </li>
     </ol>
   </section>
@@ -1128,16 +1245,16 @@ tailwind.config = {
     <div class="grid md:grid-cols-12 gap-12 mb-12">
       <div class="md:col-span-4">
         <p class="mono-eyebrow text-v3-eucalipto mb-6">— vi / FAQ</p>
-        <h2 class="font-instrument italic display-lg">Prima del<br>sopralluogo.</h2>
+        <h2 class="font-instrument italic display-lg">Domande<br>frequenti.</h2>
       </div>
     </div>
     <div class="md:ml-[33%] divide-y divide-v3-carbone/15">
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Pulizia o sanificazione?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">La pulizia rimuove polvere visibile. La sanificazione abbatte la carica microbica con prodotti PMC certificati ed è documentabile. Solo la seconda è valida per HACCP, ASL, RSPP.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Ogni quanto sanificare?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">UNI 10381-2: annuale (umidificazione acqua), biennale (vapore), triennale (senza umidificazione). Più frequente in sanitario, alimentare, palestre.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Accordo Stato-Regioni 2006?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Linee guida prevenzione legionellosi e manutenzione aeraulica. Adempimento art. 64 D.Lgs 81/08.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Ozono o PMC chimici?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Ozono richiede ambiente vuoto. PMC permettono interventi rapidi con conferma analitica via tampone. Scegliamo per cantiere.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Cosa include il check-up gratuito?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Sopralluogo, video-ispezione campione, tampone se utile, report PDF in 48 ore. Senza obbligo di acquisto.</p></details>
-      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Certificato finale?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Sì: relazione tecnica, video pre/post, scheda prodotti, certificato. Valido per HACCP, ASL, RSPP, audit.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Pulire i filtri non basta?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">No. Il biofilm si annida in profondità. Solo la sanificazione profonda con prodotti ecocompatibili lo rimuove davvero.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Ogni quanto sanificare?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Due volte all'anno (prima e dopo la stagione estiva). Più frequente per sanitari, B&B, palestre.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Cosa include il Check-Up Video Gratuito?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Sopralluogo · sonda endoscopica · prova video immediata · valutazione · preventivo. <em>Zero vincoli.</em></p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Sicuri per persone e animali?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Sì. Prodotti certificati ecocompatibili. Ambienti subito fruibili.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Posso prenotare nel weekend?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed">Sì: anche Sabato e Domenica su prenotazione.</p></details>
+      <details class="py-7"><summary class="flex justify-between items-baseline gap-6"><span class="font-instrument italic text-2xl md:text-3xl">Garanzia?</span><span class="chev text-v3-eucalipto text-3xl font-light shrink-0">+</span></summary><p class="font-manrope text-base mt-5 text-v3-carbone/80 max-w-2xl leading-relaxed"><em>Soddisfatti o rimborsati.</em> Se non soddisfa, ripetiamo senza costi.</p></details>
     </div>
   </section>
 
@@ -1145,45 +1262,47 @@ tailwind.config = {
   <section id="checkV3" class="px-7 lg:px-14 py-32 border-t border-v3-carbone/15 bg-v3-forestaScura text-v3-nebbia">
     <div class="grid md:grid-cols-12 gap-12 mb-16">
       <div class="md:col-span-4">
-        <p class="mono-eyebrow text-v3-lino mb-6">— vii / Check-up</p>
-        <h2 class="font-instrument italic display-md">Parliamo del<br>tuo edificio.</h2>
+        <p class="mono-eyebrow text-v3-lino mb-6">— vii / Check-Up</p>
+        <h2 class="font-instrument italic display-md">L'aria del tuo<br>ufficio è davvero<br>sicura?</h2>
       </div>
       <div class="md:col-span-7 md:col-start-6 self-end">
-        <p class="font-manrope text-base text-v3-nebbia/80 leading-relaxed max-w-md">Sopralluogo on-site, video-ispezione, report PDF in 48 ore. La richiamiamo entro 24 ore lavorative. Senza impegno.</p>
+        <p class="font-manrope text-base text-v3-nebbia/80 leading-relaxed max-w-md mb-6">Per le aziende di Bologna e provincia: sopralluogo diagnostico senza alcun impegno per valutare lo stato reale dei tuoi impianti.</p>
+        <div class="space-y-2 mono-meta text-v3-nebbia/70">
+          <p class="text-v3-lino mono-eyebrow">Cosa include:</p>
+          <p>→ Ispezione con Sonda Endoscopica</p>
+          <p>→ Prova Video Immediata</p>
+          <p>→ Zero Vincoli</p>
+        </div>
       </div>
     </div>
 
     <form class="md:ml-[33%] max-w-2xl space-y-8" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY" />
-      <input type="hidden" name="subject" value="Ariapura · Check-up · V3" />
+      <input type="hidden" name="subject" value="Ariapura · Check-Up Video Gratuito · V3" />
       <div>
-        <label class="mono-eyebrow text-v3-lino block mb-3">— i · Nome e cognome</label>
+        <label class="mono-eyebrow text-v3-lino block mb-3">— i · Nome e Cognome</label>
         <input required name="nome" class="w-full bg-transparent border-0 border-b border-v3-nebbia/30 pb-3 font-instrument italic text-3xl focus:border-v3-lino focus:outline-none text-v3-nebbia" />
       </div>
       <div>
-        <label class="mono-eyebrow text-v3-lino block mb-3">— ii · Azienda · studio · struttura</label>
+        <label class="mono-eyebrow text-v3-lino block mb-3">— ii · Azienda / Ruolo</label>
         <input name="azienda" class="w-full bg-transparent border-0 border-b border-v3-nebbia/30 pb-3 font-instrument italic text-3xl focus:border-v3-lino focus:outline-none text-v3-nebbia" placeholder="Opzionale" />
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <label class="mono-eyebrow text-v3-lino block mb-3">— iii · Email</label>
+          <label class="mono-eyebrow text-v3-lino block mb-3">— iii · Email Aziendale</label>
           <input required type="email" name="email" class="w-full bg-transparent border-0 border-b border-v3-nebbia/30 pb-3 font-instrument italic text-2xl focus:border-v3-lino focus:outline-none text-v3-nebbia" />
         </div>
         <div>
-          <label class="mono-eyebrow text-v3-lino block mb-3">— iv · Telefono</label>
+          <label class="mono-eyebrow text-v3-lino block mb-3">— iv · Telefono Diretto</label>
           <input required name="telefono" class="w-full bg-transparent border-0 border-b border-v3-nebbia/30 pb-3 font-instrument italic text-2xl focus:border-v3-lino focus:outline-none text-v3-nebbia" />
         </div>
       </div>
       <div>
-        <label class="mono-eyebrow text-v3-lino block mb-3">— v · Settore</label>
-        <select required name="settore" class="w-full bg-transparent border-0 border-b border-v3-nebbia/30 pb-3 font-instrument italic text-2xl focus:border-v3-lino focus:outline-none text-v3-nebbia"><option value="">— scegli —</option><option>Clinica · Studio medico</option><option>Ufficio · Coworking</option><option>Palestra · Spa</option><option>Ristorante · Hotel</option><option>Scuola · Asilo</option><option>Industria</option><option>Centro commerciale</option><option>Residenziale</option></select>
-      </div>
-      <div>
-        <label class="mono-eyebrow text-v3-lino block mb-3">— vi · Note</label>
+        <label class="mono-eyebrow text-v3-lino block mb-3">— v · Messaggio / Note</label>
         <textarea name="note" rows="3" class="w-full bg-transparent border-0 border-b border-v3-nebbia/30 pb-3 font-instrument italic text-xl focus:border-v3-lino focus:outline-none resize-none text-v3-nebbia"></textarea>
       </div>
-      <button class="magnet inline-flex items-center gap-3 mono-eyebrow text-v3-carbone bg-v3-lino hover:bg-v3-eucalipto rounded-full px-8 py-4 transition">→ Richiedi check-up gratuito</button>
-      <p class="mono-meta text-v3-nebbia/55">Trattamento dati conforme al GDPR.</p>
+      <button class="magnet inline-flex items-center gap-3 mono-eyebrow text-v3-carbone bg-v3-lino hover:bg-v3-eucalipto rounded-full px-8 py-4 transition">→ Sì, voglio il Check-Up Video Gratuito!</button>
+      <p class="mono-meta text-v3-nebbia/55">Garanzia <em>Soddisfatti o rimborsati</em> · GDPR.</p>
     </form>
   </section>
 
@@ -1191,18 +1310,19 @@ tailwind.config = {
     <div class="grid md:grid-cols-12 gap-10 items-end">
       <div class="md:col-span-6">
         <p class="font-instrument italic text-5xl mb-4">Ariapura</p>
-        <p class="font-manrope text-lg text-v3-carbone/65 max-w-md leading-relaxed">Sanificazione professionale di impianti di climatizzazione e condotte aerauliche. Castel Maggiore (BO) · dal 1992.</p>
+        <p class="font-manrope text-lg text-v3-carbone/65 max-w-md leading-relaxed">Soluzioni innovative per un'aria pulita e salubre, ogni giorno. Castel Maggiore (BO) · oltre 30 anni.</p>
       </div>
       <div class="md:col-span-3 mono-meta text-v3-carbone/65">
         <p class="mono-eyebrow text-v3-eucalipto mb-3">— Sede</p>
-        Via Lame 261<br>40013 Castel Maggiore (BO)<br><a href="tel:+390510828717" class="hover:text-v3-eucalipto">051 082 8717</a><br><a href="mailto:info@ariapura.org" class="hover:text-v3-eucalipto">info@ariapura.org</a>
+        Via Lame 261<br>40013 Castel Maggiore (BO)<br><a href="tel:+390510828717" class="hover:text-v3-eucalipto">051 08 28 717</a><br><a href="mailto:info@ariapura.org" class="hover:text-v3-eucalipto">info@ariapura.org</a>
       </div>
       <div class="md:col-span-3 mono-meta text-v3-carbone/65">
         <p class="mono-eyebrow text-v3-eucalipto mb-3">— Orari</p>
-        Lun–Ven<br>09:00–13:00<br>14:30–17:30
+        Lun–Ven · 09:00–13:00 / 14:30–17:30<br>Sab–Dom · su prenotazione<br><br>
+        @ariapurabologna
       </div>
     </div>
-    <p class="mono-meta text-v3-carbone/40 mt-12 pt-6 border-t border-v3-carbone/10">Demo by <a href="https://www.skynetjoe.com" class="underline hover:text-v3-eucalipto">SkynetLabs</a> · skynetjoe.com — anteprima per revisione cliente.</p>
+    <p class="mono-meta text-v3-carbone/40 mt-12 pt-6 border-t border-v3-carbone/10">Demo by <a href="https://www.skynetjoe.com" class="underline hover:text-v3-eucalipto">SkynetLabs</a> · contenuto verbatim ariapura.org.</p>
   </footer>
 
   </div>
@@ -1217,29 +1337,30 @@ tailwind.config = {
       "@type":"HVACBusiness",
       "@id":"https://www.ariapura.org/#org",
       "name":"Ariapura",
-      "description":"Sanificazione professionale di impianti di climatizzazione e condotte aerauliche. Bologna e provincia. Conformità UNI 10381-2 / UNI EN 15780.",
+      "description":"Sanificazione e manutenzione professionale di condizionatori. Soluzioni innovative per un'aria pulita e salubre, ogni giorno. Bologna · oltre 30 anni.",
       "url":"https://www.ariapura.org/",
       "telephone":"+39-051-0828717",
       "email":"info@ariapura.org",
       "priceRange":"€€",
       "address":{"@type":"PostalAddress","streetAddress":"Via Lame, 261","addressLocality":"Castel Maggiore","addressRegion":"BO","postalCode":"40013","addressCountry":"IT"},
-      "areaServed":[{"@type":"City","name":"Bologna"},{"@type":"AdministrativeArea","name":"Emilia-Romagna"}],
+      "areaServed":[{"@type":"City","name":"Bologna"},{"@type":"City","name":"Castel Maggiore"},{"@type":"City","name":"Casalecchio di Reno"},{"@type":"AdministrativeArea","name":"Emilia-Romagna"}],
       "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"14:30","closes":"17:30"}],
       "hasCredential":[{"@type":"EducationalOccupationalCredential","credentialCategory":"FGAS"},{"@type":"EducationalOccupationalCredential","credentialCategory":"ACCREDIA"}],
+      "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"850"},
       "makesOffer":[
-        {"@type":"Offer","name":"Sanificazione impianti aeraulici","description":"Rimozione muffe, batteri e biofilm da split, condotte e UTA con prodotti PMC certificati."},
-        {"@type":"Offer","name":"Manutenzione programmata","description":"Programmi su misura per residenziale e B2B con calendario, promemoria, reportistica."},
-        {"@type":"Offer","name":"Filtri elettrostatici","description":"Filtrazione attiva ad alta efficienza per particolato fine, VOC e batteri aerosol."},
-        {"@type":"Offer","name":"Check-up aeraulico gratuito","price":"0","priceCurrency":"EUR","description":"Sopralluogo on-site, video-ispezione campione, tampone microbiologico, report PDF in 48 ore."}
+        {"@type":"Offer","name":"Sanificazione Condizionatori","description":"Eliminazione batteri, virus, muffe da split e unità interne. Prodotti certificati ecocompatibili."},
+        {"@type":"Offer","name":"Manutenzione Programmata","description":"Diagnosi personalizzata, pulizia approfondita, ottimizzazione energetica 5–15%."},
+        {"@type":"Offer","name":"Filtri Elettrostatici","description":"Filtrazione attiva ad alta efficienza per polveri, allergeni, batteri."},
+        {"@type":"Offer","name":"Check-Up Video Gratuito","price":"0","priceCurrency":"EUR","description":"Sopralluogo on-site, ispezione con sonda endoscopica, prova video immediata, valutazione, preventivo. Zero vincoli."}
       ]
     },
     {
       "@type":"FAQPage",
       "mainEntity":[
-        {"@type":"Question","name":"Differenza tra pulizia e sanificazione?","acceptedAnswer":{"@type":"Answer","text":"La pulizia rimuove polvere visibile. La sanificazione abbatte la carica microbica con prodotti PMC certificati ed è documentabile in cartella tecnica."}},
-        {"@type":"Question","name":"Ogni quanto va sanificato un impianto?","acceptedAnswer":{"@type":"Answer","text":"UNI 10381-2: annuale (umidificazione acqua), biennale (vapore), triennale (senza umidificazione)."}},
-        {"@type":"Question","name":"Cosa prevede l'Accordo Stato-Regioni del 5 ottobre 2006?","acceptedAnswer":{"@type":"Answer","text":"Linee guida prevenzione legionellosi e manutenzione aeraulica. Adempimento art. 64 D.Lgs 81/08."}},
-        {"@type":"Question","name":"Cosa include il check-up gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sopralluogo on-site, video-ispezione campione, tampone microbiologico se utile, report PDF in 48 ore. Senza obbligo."}}
+        {"@type":"Question","name":"Pulire i filtri non basta?","acceptedAnswer":{"@type":"Answer","text":"No. Il biofilm si annida in profondità. Solo la sanificazione profonda con prodotti ecocompatibili lo rimuove."}},
+        {"@type":"Question","name":"Ogni quanto sanificare un condizionatore?","acceptedAnswer":{"@type":"Answer","text":"Due volte all'anno (prima e dopo la stagione estiva). Più frequente in sanitari, B&B, palestre."}},
+        {"@type":"Question","name":"Cosa include il Check-Up Video Gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sopralluogo, sonda endoscopica, prova video immediata, valutazione e preventivo. Zero vincoli."}},
+        {"@type":"Question","name":"Esiste una garanzia?","acceptedAnswer":{"@type":"Answer","text":"Sì: Soddisfatti o rimborsati. Se l'intervento non soddisfa, ripetiamo il servizio senza costi aggiuntivi."}}
       ]
     }
   ]
@@ -1262,20 +1383,17 @@ tailwind.config = {
   const fromHash = (location.hash || '').replace('#','');
   if (['v1','v2','v3'].includes(fromHash)) setVariant(fromHash);
 
-  // —— Cursor orb ——
+  // Cursor orb
   if (window.matchMedia('(min-width: 769px)').matches) {
     const orb = document.getElementById('orb');
     let tx=0, ty=0, cx=0, cy=0;
     document.addEventListener('mousemove', e => { tx=e.clientX; ty=e.clientY; });
     (function tick(){ cx += (tx-cx)*0.18; cy += (ty-cy)*0.18; orb.style.transform = `translate3d(${cx-9}px,${cy-9}px,0)`; requestAnimationFrame(tick); })();
-    const interactive = 'a,button,summary,input,textarea,select,.img-card';
-    document.querySelectorAll(interactive).forEach(el => {
-      el.addEventListener('mouseenter', () => orb.classList.add('big'));
-      el.addEventListener('mouseleave', () => orb.classList.remove('big'));
-    });
+    document.addEventListener('mouseover', e => { if (e.target.closest('a,button,summary,input,textarea,select,.img-card')) orb.classList.add('big'); });
+    document.addEventListener('mouseout', e => { if (e.target.closest('a,button,summary,input,textarea,select,.img-card')) orb.classList.remove('big'); });
   } else { document.body.classList.add('no-cursor'); }
 
-  // —— Magnetic buttons ——
+  // Magnetic buttons
   document.querySelectorAll('.magnet').forEach(b => {
     b.addEventListener('mousemove', e => {
       const r = b.getBoundingClientRect();
@@ -1286,39 +1404,51 @@ tailwind.config = {
     b.addEventListener('mouseleave', () => { b.style.transform = ''; });
   });
 
-  // —— Reveal on scroll ——
+  // Reveal on scroll
   document.querySelectorAll('.reveal').forEach(p => {
     if (p.dataset.split) return;
     p.dataset.split = '1';
-    const words = p.innerHTML.split(/(\s+)/).map(w => /\s+/.test(w) ? w : `<span>${w}</span>`).join('');
-    p.innerHTML = words;
+    p.innerHTML = p.innerHTML.split(/(\s+)/).map(w => /\s+/.test(w) ? w : `<span>${w}</span>`).join('');
   });
-  const io = new IntersectionObserver(es => es.forEach(e => {
+  const ioReveal = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) {
       [...e.target.children].forEach((s,i) => setTimeout(() => s.classList.add('in'), i*32));
-      io.unobserve(e.target);
+      ioReveal.unobserve(e.target);
     }
   }), { threshold: 0.2 });
-  document.querySelectorAll('.reveal').forEach(p => io.observe(p));
+  document.querySelectorAll('.reveal').forEach(p => ioReveal.observe(p));
 
-  // —— Horizontal scroll (V1 settori) ——
-  const hWrap = document.querySelector('.v1 .h-wrap');
-  if (hWrap) {
-    const track = hWrap.querySelector('.h-track');
-    const update = () => {
-      const r = hWrap.getBoundingClientRect();
-      const wH = window.innerHeight;
-      const total = hWrap.offsetHeight - wH;
-      const p = Math.max(0, Math.min(1, -r.top / total));
-      const dist = track.scrollWidth - window.innerWidth;
-      track.style.transform = `translateX(${-p * dist}px)`;
-    };
-    window.addEventListener('scroll', update, { passive:true });
-    window.addEventListener('resize', update);
-    update();
-  }
+  // Count-up
+  const ioCount = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = +el.dataset.target;
+      const dur = 1400;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now-start)/dur);
+        const ease = 1 - Math.pow(1-p, 3);
+        const val = Math.round(target * ease);
+        el.firstChild.nodeValue = val;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      ioCount.unobserve(el);
+    }
+  }), { threshold: 0.5 });
+  document.querySelectorAll('.count-up').forEach(el => ioCount.observe(el));
 
-  // —— Sticky TOC (V3) ——
+  // Sensor bars
+  const ioBar = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+      const bar = e.target;
+      bar.style.width = bar.dataset.pct + '%';
+      ioBar.unobserve(bar);
+    }
+  }), { threshold: 0.4 });
+  document.querySelectorAll('.sensor-bar > span[data-pct]').forEach(el => ioBar.observe(el));
+
+  // Sticky TOC
   const tocLinks = document.querySelectorAll('.toc a');
   if (tocLinks.length) {
     const sectIO = new IntersectionObserver(es => es.forEach(e => {
@@ -1329,7 +1459,7 @@ tailwind.config = {
     document.querySelectorAll('.v3 section[id]').forEach(s => sectIO.observe(s));
   }
 
-  // —— V2 conversational form steps ——
+  // Conversational form
   const stepEls = document.querySelectorAll('#formV2 .step');
   const stepLabel = document.getElementById('stepLabel');
   const dots = ['','dot-2','dot-3','dot-4','dot-5'].map(c => c ? document.querySelector('.'+c) : null);
@@ -1344,6 +1474,67 @@ tailwind.config = {
   document.querySelectorAll('#formV2 .next').forEach(btn => btn.addEventListener('click', () => {
     if (idx < stepEls.length - 1) { idx++; showStep(idx); }
   }));
+
+  // Before/after slider
+  document.querySelectorAll('.ba').forEach(ba => {
+    const range = ba.querySelector('input[type=range]');
+    const after = ba.querySelector('.after');
+    const handle = ba.querySelector('.ba-handle');
+    const update = () => {
+      const v = range.value;
+      after.style.clipPath = `inset(0 0 0 ${v}%)`;
+      handle.style.left = v + '%';
+    };
+    range.addEventListener('input', update);
+    update();
+  });
+
+  // 3D tilt cards
+  document.querySelectorAll('.v3 .tilt').forEach(card => {
+    const inner = card.querySelector('.tilt-inner');
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      inner.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(20px)`;
+    });
+    card.addEventListener('mouseleave', () => { inner.style.transform = ''; });
+  });
+
+  // V1 Canvas particle field
+  const cv = document.getElementById('v1Particles');
+  if (cv) {
+    const ctx = cv.getContext('2d');
+    let W, H, parts = [];
+    const resize = () => { W = cv.width = cv.offsetWidth * devicePixelRatio; H = cv.height = cv.offsetHeight * devicePixelRatio; };
+    resize(); window.addEventListener('resize', resize);
+    const N = 90;
+    for (let i=0; i<N; i++) parts.push({ x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-0.5)*0.4, vy: (Math.random()-0.5)*0.4, r: Math.random()*2+0.5, hue: Math.random() });
+    const draw = () => {
+      ctx.fillStyle = 'rgba(244,239,232,0.04)';
+      ctx.fillRect(0,0,W,H);
+      parts.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x<0||p.x>W) p.vx*=-1;
+        if (p.y<0||p.y>H) p.vy*=-1;
+        const c = p.hue > 0.5 ? '184,92,56' : '90,107,93';
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r*devicePixelRatio, 0, 6.28);
+        ctx.fillStyle = `rgba(${c},${0.25 + p.hue*0.4})`; ctx.fill();
+      });
+      // connections
+      for (let i=0; i<N; i++) for (let j=i+1; j<N; j++) {
+        const dx = parts[i].x-parts[j].x, dy = parts[i].y-parts[j].y;
+        const d = Math.sqrt(dx*dx+dy*dy);
+        if (d < 90*devicePixelRatio) {
+          ctx.strokeStyle = `rgba(28,26,23,${0.06*(1-d/(90*devicePixelRatio))})`;
+          ctx.lineWidth = 0.5*devicePixelRatio;
+          ctx.beginPath(); ctx.moveTo(parts[i].x,parts[i].y); ctx.lineTo(parts[j].x,parts[j].y); ctx.stroke();
+        }
+      }
+      requestAnimationFrame(draw);
+    };
+    draw();
+  }
 })();
 </script>
 </body>
