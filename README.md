@@ -2,6 +2,10 @@
 
 Speculative demo for ariapura.org — Italian HVAC sanitation specialist (Bologna). 3 design variants in single HTML, sticky top-right switcher.
 
+## Status
+
+Last reviewed: September 2026 · release v2026.09
+
 ## Variants
 
 | | Axis | Palette | Type |
