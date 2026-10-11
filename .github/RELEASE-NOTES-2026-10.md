@@ -1,0 +1,4 @@
+- skynetlabs-ariapura-relaunch is a public speculative relaunch demo for ariapura.org (Italian HVAC sanitation specialist, Bologna): one static `index.html` with three design variants, Italian copy, JSON-LD, `docs/` pitch material.
+- Current state: superseded - the successor repo `skynetlabs-ariapura-cinema` states that it deprecates this bundle; last commit here 2026-05-08.
+- Reviewed October 2026: README link checked (resolves); Work with SkynetLabs section added; MIT LICENSE file added because the README says MIT. No markup or config changed.
+- Known gaps: the Web3Forms key is still the literal `REPLACE_WITH_WEB3FORMS_KEY` placeholder; README does not point readers at the successor repo.
